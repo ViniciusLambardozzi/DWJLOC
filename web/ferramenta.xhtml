@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	>
+	  
+	<ui:composition template="_template.xhtml">
+	
+	<ui:define name="title">Ferramenta</ui:define>
+	<ui:define name="titulo">Ferramenta</ui:define>
+	  
+	  <ui:define name="content">
+	  	<h:form>
+	  		<h:messages/>
+	  		<fieldset>
+	  			<legend>Cadastrar</legend>
+	  			<h:panelGrid columns="2">
+	  				<h:outputText value="Código" for="codigo"/>
+	  				<h:inputText id="codigo" value="#{ferramentaController.ferramenta.codigo}"/>
+	  				
+	  				<h:outputText value="Tipo" for="tipo"/>
+					<h:selectOneMenu id="tipo" value="#{ferramentaController.idTipo}">
+						<f:selectItem itemLabel="Selecione um tipo" noSelectionOption="true"/>
+						<f:selectItems value="#{tipoFerramentaController.tiposFerramentas}" var="tipo" itemLabel="#{tipo.nome}" itemValue="#{tipo.id}"/>
+					</h:selectOneMenu>
+					
+					<h:outputText value="Estado" for="estado"/>
+					<h:selectOneMenu id="estado" value="#{ferramentaController.idEstado}">
+						<f:selectItem itemLabel="Selecione um estado" noSelectionOption="true"/>
+						<f:selectItems value="#{estadoFerramentaController.estadosFerramentas}" var="estado" itemLabel="#{estado.nome}" itemValue="#{estado.id}"/>
+					</h:selectOneMenu>
+	  					
+	  				<h:outputText value="Preço" for="preco"/>
+	  				<h:inputText id="preco" value="#{ferramentaController.ferramenta.preco}"/>
+	  				
+	  				<h:outputText value="Preço de aluguel" for="aluguel"/>
+	  				<h:inputText id="aluguel" value="#{ferramentaController.ferramenta.precoAluguel}"/>
+	  				
+	  				<h:commandButton value="Gravar" action="#{ferramentaController.gravar}"/>
+	  				
+	  			</h:panelGrid>
+	  		</fieldset>
+	  	</h:form>
+	  	
+	  	<h:form id="formTabelaFerramentas">
+	  		<h:dataTable id="tabelaFerramentas" value="#{ferramentaController.ferramentas}" var="ferramenta">
+				<h:column>
+					<f:facet name="header">Codigo</f:facet>
+					<h:outputText value="#{ferramenta.codigo}"/>
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Tipo</f:facet>
+					<h:outputText value="#{ferramenta.tipo.nome}"/>
+				</h:column>	
+					  	
+				<h:column>
+					<f:facet name="header">Estado</f:facet>
+					<h:outputText value="#{ferramenta.estado.nome}"/>
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Preço</f:facet>
+					<h:outputText value="#{ferramenta.preco}"/>
+				</h:column>	
+				
+				<h:column>
+					<f:facet name="header">Preço de aluguel</f:facet>
+					<h:outputText value="#{ferramenta.precoAluguel}"/>
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Atualizar</f:facet>
+					<h:commandLink value="Atualizar" action="#{ferramentaController.carregar(ferramenta)}"/>
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Remover</f:facet>
+					<h:commandLink value="Remover" action="#{ferramentaController.remover(ferramenta)}"/>
+				</h:column>
+					  			
+	  		</h:dataTable>
+	  	</h:form>
+	  	
+	  	</ui:define>
+	  </ui:composition>
+</html>
