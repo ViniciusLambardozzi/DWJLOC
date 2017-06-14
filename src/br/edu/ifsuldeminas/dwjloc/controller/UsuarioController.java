@@ -11,6 +11,7 @@ import br.edu.ifsuldeminas.dwjloc.dao.Dao;
 import br.edu.ifsuldeminas.dwjloc.dao.UsuarioDao;
 import br.edu.ifsuldeminas.dwjloc.lib.LibConstantes;
 import br.edu.ifsuldeminas.dwjloc.model.Grupo;
+import br.edu.ifsuldeminas.dwjloc.model.PessoaFisica;
 import br.edu.ifsuldeminas.dwjloc.model.Usuario;
 import br.edu.ifsuldeminas.dwjloc.util.Utils;
 
@@ -40,28 +41,36 @@ public class UsuarioController
 	}
 
 	public void gravar(Usuario usuario)
-	{		FacesContext.getCurrentInstance().addMessage("pessoafisica", new FacesMessage(String.valueOf(idGrupo)));
+	{
+		try
+		{
+			Grupo grupo = new Dao<Grupo>(Grupo.class).getById(idGrupo);
+			usuario.setGrupo(grupo);
 
-		Grupo grupo = new Dao<Grupo>(Grupo.class).getById(idGrupo);
-		usuario.setGrupo(grupo);
-		
-		if(!usuario.getSenha().equals(senhaBd))
+			if (!usuario.getSenha().equals(senhaBd))
+			{
+				usuario.setSenha(Utils.toMD5(usuario.getSenha()));
+			}
+
+			if (usuario.getId() == null)
+			{
+				new Dao<Usuario>(Usuario.class).add(usuario);
+			} else
+			{
+				new Dao<Usuario>(Usuario.class).update(usuario);
+			}
+			senhaBd = "";
+			idGrupo = 0;
+		}catch (Exception e)
 		{
-			usuario.setSenha(Utils.toMD5(usuario.getSenha()));
-		}
-		
-		if(usuario.getId() == null)
-		{
-			new Dao<Usuario>(Usuario.class).add(usuario);			
-		}else
-		{
-			new Dao<Usuario>(Usuario.class).update(usuario);
+			FacesContext.getCurrentInstance().addMessage(usuario instanceof PessoaFisica ? "pessoafisica" : "pessoajuridica", new FacesMessage("Nome de usuário já existe."));
 		}
 	}
 	
 	public void carregar(Usuario usuario)
 	{
 		senhaBd = usuario.getSenha();
+		idGrupo = usuario.getGrupo().getId();
 	}
 	
 	public void remover(Usuario usuario)

@@ -14,18 +14,18 @@
 	  
 	  <ui:define name="content">
 	  	<h:form>
-	  		<h:messages></h:messages>
+	  		<h:messages/>
 	  		<fieldset>
 	  			<legend>Cadastrar</legend>
 	  			<h:panelGrid columns="2">
 	  				
-	  				<h:outputText value="Nome" for="nome"></h:outputText>
-	  				<h:inputText id="nome" value="#{estadoFerramentaController.estadoFerramenta.nome}"></h:inputText>
+	  				<h:outputText value="Nome" for="nome"/>
+	  				<h:inputText id="nome" value="#{estadoFerramentaController.estadoFerramenta.nome}"  required="true" requiredMessage="Nome obrigatório."/>
 	  				
-	  				<h:outputText value="Descrição" for="desc"></h:outputText>
-	  				<h:inputText id="desc" value="#{estadoFerramentaController.estadoFerramenta.descricao}"></h:inputText>
+	  				<h:outputText value="Descrição" for="desc"/>
+	  				<h:inputText id="desc" value="#{estadoFerramentaController.estadoFerramenta.descricao}"/>
 	  				
-	  				<h:commandButton value="Gravar" action="#{estadoFerramentaController.gravar(estadoFerramentaController.estadoFerramenta)}"></h:commandButton>
+	  				<h:commandButton value="Gravar" action="#{estadoFerramentaController.gravar(estadoFerramentaController.estadoFerramenta)}"/>
 	  				
 	  			</h:panelGrid>
 	  		</fieldset>
@@ -35,22 +35,22 @@
 	  		<h:dataTable id="tabelaEstados" value="#{estadoFerramentaController.estadosFerramentas}" var="estado">
 				<h:column>
 					<f:facet name="header">Nome</f:facet>
-					<h:outputText value="#{estado.nome}"></h:outputText>
+					<h:outputText value="#{estado.nome}"/>
 				</h:column>
 				
 				<h:column>
 					<f:facet name="header">Descrição</f:facet>
-					<h:outputText value="#{estado.descricao}"></h:outputText>
+					<h:outputText value="#{estado.descricao}"/>
 				</h:column>
 				
 				<h:column>
 					<f:facet name="header">Atualizar</f:facet>
-					<h:commandLink value="Atualizar" action="#{estadoFerramentaController.carregar(estado)}"></h:commandLink>
+					<h:commandLink value="Atualizar" disabled="#{!grupoController.isNotConstant(estado.id)}" action="#{estadoFerramentaController.carregar(estado)}"/>
 				</h:column>
 				
 				<h:column>
 					<f:facet name="header">Remover</f:facet>
-					<h:commandLink value="Remover" action="#{estadoFerramentaController.remover(estado)}"></h:commandLink>
+					<h:commandLink value="Remover" disabled="#{!grupoController.isNotConstant(estado.id)}" action="#{estadoFerramentaController.remover(estado)}"/>
 				</h:column>
 					  			
 	  		</h:dataTable>

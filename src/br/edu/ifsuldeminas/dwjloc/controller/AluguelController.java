@@ -8,8 +8,10 @@ import br.edu.ifsuldeminas.dwjloc.model.*;
 import br.edu.ifsuldeminas.dwjloc.util.JPAUtil;
 import com.mysql.jdbc.util.TimezoneDump;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
 import javax.persistence.EntityManager;
 import java.sql.Time;
 import java.time.LocalDate;
@@ -30,7 +32,10 @@ public class AluguelController
 
     public void adicionarLocacao()
     {
-        System.out.println(this);
+        if(!validar())
+        {
+            return;
+        }
 
         // Lista de ferramentas disponíveis
         EntityManager manager = JPAUtil.getEntityManager();
@@ -80,6 +85,37 @@ public class AluguelController
         {
             manager.close();
         }
+    }
+
+    public boolean validar()
+    {
+        boolean ok = true;
+
+        if(idCliente == null || idCliente == 0)
+        {
+            FacesContext.getCurrentInstance().addMessage("aluguel", new FacesMessage("Cliente obrigatório."));
+
+            ok = false;
+        }
+        if(idTipo == null || idTipo == 0)
+        {
+            FacesContext.getCurrentInstance().addMessage("aluguel", new FacesMessage("Tipo obrigatório."));
+
+            ok = false;
+        }
+        if(quantidade == null || quantidade == 0)
+        {
+            FacesContext.getCurrentInstance().addMessage("aluguel", new FacesMessage("Quantidade obrigatória."));
+
+            ok = false;
+        }
+        if(dataLocacao.compareTo(dataDevolucao) > 0)
+        {
+            FacesContext.getCurrentInstance().addMessage("aluguel", new FacesMessage("A data de locação deve ser anterior ou igual à data de devolução."));
+
+            ok = false;
+        }
+        return ok;
     }
 
     public void remover(FerramentaAluguel locacao)

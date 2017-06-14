@@ -14,15 +14,15 @@
 	  
 	  <ui:define name="content">
 	  	<h:form>
-	  		<h:messages></h:messages>
+	  		<h:messages/>
 	  		<fieldset>
 	  			<legend>Cadastrar</legend>
 	  			<h:panelGrid columns="2">
 	  				
-	  				<h:outputText value="Nome" for="nome"></h:outputText>
-	  				<h:inputText id="nome" value="#{grupoController.grupo.nome}"></h:inputText>
+	  				<h:outputText value="Nome" for="nome"/>
+	  				<h:inputText id="nome" value="#{grupoController.grupo.nome}" required="true" requiredMessage="Nome obrigatório."/>
 	  				
-	  				<h:commandButton value="Gravar" action="#{grupoController.gravar(grupoController.grupo)}"></h:commandButton>
+	  				<h:commandButton value="Gravar" action="#{grupoController.gravar(grupoController.grupo)}"/>
 	  				
 	  			</h:panelGrid>
 	  		</fieldset>
@@ -32,17 +32,17 @@
 	  		<h:dataTable id="tabelaGrupos" value="#{grupoController.grupos}" var="grupo">
 				<h:column>
 					<f:facet name="header">Nome</f:facet>
-					<h:outputText value="#{grupo.nome}"></h:outputText>
+					<h:outputText value="#{grupo.nome}"/>
 				</h:column>
 				
 				<h:column>
 					<f:facet name="header">Atualizar</f:facet>
-					<h:commandLink value="Atualizar" action="#{grupoController.carregar(grupo)}"></h:commandLink>
+					<h:commandLink value="Atualizar" disabled="#{!grupoController.isNotConstant(grupo.id)}" action="#{grupoController.carregar(grupo)}"/>
 				</h:column>
 				
 				<h:column>
 					<f:facet name="header">Remover</f:facet>
-					<h:commandLink value="Remover" action="#{grupoController.remover(grupo)}"></h:commandLink>
+					<h:commandLink value="Remover" disabled="#{!grupoController.isNotConstant(grupo.id)}" action="#{grupoController.remover(grupo)}"/>
 				</h:column>
 					  			
 	  		</h:dataTable>

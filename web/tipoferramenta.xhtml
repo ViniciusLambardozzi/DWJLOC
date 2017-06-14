@@ -14,15 +14,15 @@
 	  
 	  <ui:define name="content">
 	  	<h:form>
-	  		<h:messages></h:messages>
+	  		<h:messages/>
 	  		<fieldset>
 	  			<legend>Cadastrar</legend>
 	  			<h:panelGrid columns="2">
 	  				
-	  				<h:outputText value="Nome" for="nome"></h:outputText>
-	  				<h:inputText id="nome" value="#{tipoFerramentaController.tipoFerramenta.nome}"></h:inputText>
+	  				<h:outputText value="Nome" for="nome"/>
+	  				<h:inputText id="nome" value="#{tipoFerramentaController.tipoFerramenta.nome}" required="true" requiredMessage="Nome obrigatório."/>
 	  				
-	  				<h:commandButton value="Gravar" action="#{tipoFerramentaController.gravar(tipoFerramentaController.tipoFerramenta)}"></h:commandButton>
+	  				<h:commandButton value="Gravar" action="#{tipoFerramentaController.gravar(tipoFerramentaController.tipoFerramenta)}"/>
 	  				
 	  			</h:panelGrid>
 	  		</fieldset>
@@ -32,17 +32,17 @@
 	  		<h:dataTable id="tabelaTipos" value="#{tipoFerramentaController.tiposFerramentas}" var="tipo">
 				<h:column>
 					<f:facet name="header">Nome</f:facet>
-					<h:outputText value="#{tipo.nome}"></h:outputText>
+					<h:outputText value="#{tipo.nome}"/>
 				</h:column>
 				
 				<h:column>
 					<f:facet name="header">Atualizar</f:facet>
-					<h:commandLink value="Atualizar" action="#{tipoFerramentaController.carregar(tipo)}"></h:commandLink>
+					<h:commandLink value="Atualizar" action="#{tipoFerramentaController.carregar(tipo)}"/>
 				</h:column>
 				
 				<h:column>
 					<f:facet name="header">Remover</f:facet>
-					<h:commandLink value="Remover" action="#{tipoFerramentaController.remover(tipo)}"></h:commandLink>
+					<h:commandLink value="Remover" action="#{tipoFerramentaController.remover(tipo)}"/>
 				</h:column>
 					  			
 	  		</h:dataTable>

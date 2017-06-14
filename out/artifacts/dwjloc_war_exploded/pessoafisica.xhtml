@@ -20,10 +20,10 @@
 	  			<h:panelGrid columns="2">
 	  				
 	  				<h:outputText value="Nome" for="nome"/>
-	  				<h:inputText id="nome" value="#{pessoaFisicaController.pessoaFisica.nome}"/>
+	  				<h:inputText id="nome" value="#{pessoaFisicaController.pessoaFisica.nome}" required="true" requiredMessage="Nome obrigatório."/>
 	  					
 					<h:outputText value="Grupo" for="grupo"/>
-					<h:selectOneMenu id="grupo" value="#{pessoaFisicaController.idGrupo}">
+					<h:selectOneMenu id="grupo" value="#{pessoaFisicaController.idGrupo}"  required="true" requiredMessage="Grupo obrigatório.">
 						<f:selectItem itemLabel="Selecione um grupo" noSelectionOption="true"/>
 						<f:selectItems value="#{pessoaFisicaController.grupos}" var="grupo" itemLabel="#{grupo.nome}" itemValue="#{grupo.id}"/>
 					</h:selectOneMenu>	  					
@@ -36,29 +36,31 @@
 	  					<f:passThroughAttribute name="type" value="email"/>
 	  				</h:inputText>
 	  				
-					<h:outputText value="Endereço" for="endereco"/>
+					<h:outputText value="Endereço" for="endereco"  required="true" requiredMessage="Endereço obrigatório."/>
 	  				<h:inputText id="endereco" value="#{pessoaFisicaController.pessoaFisica.endereco}"/>
 	  				
 	  				<h:outputText value="Bairro" for="bairro"/>
-	  				<h:inputText id="bairro" value="#{pessoaFisicaController.pessoaFisica.bairro}"/>
+	  				<h:inputText id="bairro" value="#{pessoaFisicaController.pessoaFisica.bairro}" required="true" requiredMessage="Bairro obrigatório."/>
 	  				
 	  				<h:outputText value="Cidade" for="cidade"/>
-	  				<h:inputText id="cidade" value="#{pessoaFisicaController.pessoaFisica.cidade}"/>
+	  				<h:inputText id="cidade" value="#{pessoaFisicaController.pessoaFisica.cidade}"  required="true" requiredMessage="Bairro obrigatório."/>
 	  				
 	  				<h:outputText value="CEP" for="cep"/>
-	  				<h:inputText id="cep" value="#{pessoaFisicaController.pessoaFisica.cep}"/>
+	  				<h:inputText id="cep" value="#{pessoaFisicaController.pessoaFisica.cep}"  required="true" requiredMessage="CEP obrigatório."/>
 	  				
 	  				<h:outputText value="RG" for="rg"/>
-	  				<h:inputText id="rg" value="#{pessoaFisicaController.pessoaFisica.rg}"/>
+	  				<h:inputText id="rg" value="#{pessoaFisicaController.pessoaFisica.rg}"  required="true" requiredMessage="RG obrigatório."/>
 	  				
 	  				<h:outputText value="CPF" for="cpf"/>
-	  				<h:inputText id="cpf" value="#{pessoaFisicaController.pessoaFisica.cpf}"/>
+	  				<h:inputText id="cpf" value="#{pessoaFisicaController.pessoaFisica.cpf}"  required="true" requiredMessage="CPF obrigatório."/>
 	  				
 	  				<h:outputText value="Login" for="login"/>
-	  				<h:inputText id="login" value="#{pessoaFisicaController.pessoaFisica.login}"/>
+	  				<h:inputText id="login" value="#{pessoaFisicaController.pessoaFisica.login}"  required="true" requiredMessage="Login obrigatório."/>
 	  				
 	  				<h:outputText value="Senha" for="senha"/>
-	  				<h:inputText id="senha" value="#{pessoaFisicaController.pessoaFisica.senha}"/>
+	  				<h:inputText id="senha" value="#{pessoaFisicaController.pessoaFisica.senha}"  required="true" requiredMessage="Senha obrigatória.">
+						<f:passThroughAttribute name="type" value="password"/>
+					</h:inputText>
 	  				
 	  				<h:commandButton value="Gravar" action="#{pessoaFisicaController.gravar(pessoaFisicaController.pessoaFisica)}"/>
 	  				

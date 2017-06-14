@@ -52,6 +52,8 @@ public class FerramentaController
 	public void carregar(Ferramenta ferramenta)
 	{
 		this.ferramenta = ferramenta;
+		idTipo = ferramenta.getTipo().getId();
+		idEstado = ferramenta.getEstado().getId();
 	}
 	
 	public void gravar()
@@ -70,6 +72,8 @@ public class FerramentaController
 			new Dao<Ferramenta>(Ferramenta.class).update(ferramenta);
 		}
 		this.ferramenta = new Ferramenta();
+		idTipo = 0;
+		idEstado = 0;
 	}
 
 	public List<Ferramenta> getPorTipoEstado(TipoFerramenta tipo, EstadoFerramenta estado)

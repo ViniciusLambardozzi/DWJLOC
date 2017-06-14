@@ -35,7 +35,7 @@ public class GrupoController
 			this.grupo = grupo;
 		}else
 		{
-			FacesContext.getCurrentInstance().addMessage("grupo", new FacesMessage("O grupo " + grupo.getNome() + " � constante e n�o pode ser alterado."));
+			FacesContext.getCurrentInstance().addMessage("grupo", new FacesMessage("O grupo " + grupo.getNome() + " é constante e não pode ser alterado."));
 		}
 	}
 
@@ -54,12 +54,17 @@ public class GrupoController
 			new Dao<Grupo>(Grupo.class).remove(grupo);
 		}else
 		{
-			FacesContext.getCurrentInstance().addMessage("grupo", new FacesMessage("O grupo " + grupo.getNome() + " � constante e n�o pode ser alterado."));
+			FacesContext.getCurrentInstance().addMessage("grupo", new FacesMessage("O grupo " + grupo.getNome() + " é constante e não pode ser alterado."));
 		}
 	}
 	
 	public boolean isNotConstant(Integer id)
 	{
 		return id != LibConstantes.Banco.ID_GRUPO_CLIENTES && id != LibConstantes.Banco.ID_GRUPO_ADMINISTRADORES;
+	}
+
+	public boolean isAdministrador(Integer id)
+	{
+		return id == LibConstantes.Banco.ID_GRUPO_ADMINISTRADORES;
 	}
 }

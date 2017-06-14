@@ -30,53 +30,55 @@
 	  
 	  <ui:define name="content">
 	  	<h:form>
-	  		<h:messages></h:messages>
+	  		<h:messages/>
 	  		<fieldset>
 	  			<legend>Cadastrar</legend>
 	  			<h:panelGrid columns="2">
 	  				
-	  				<h:outputText value="Nome" for="nome"></h:outputText>
-	  				<h:inputText id="nome" value="#{pessoaJuridicaController.pessoaJuridica.nome}"></h:inputText>
+	  				<h:outputText value="Nome" for="nome"/>
+	  				<h:inputText id="nome" value="#{pessoaJuridicaController.pessoaJuridica.nome}" required="true" requiredMessage="Nome obrigatório."/>
 	  				
-	  				<h:outputText value="Grupo" for="grupo"></h:outputText>
-					<h:selectOneMenu id="grupo" value="#{pessoaJuridicaController.idGrupo}">
-						<f:selectItem itemLabel="Selecione um grupo" noSelectionOption="true"></f:selectItem>
-						<f:selectItems value="#{pessoaJuridicaController.grupos}" var="grupo" itemLabel="#{grupo.nome}" itemValue="#{grupo.id}"></f:selectItems>
+	  				<h:outputText value="Grupo" for="grupo"/>
+					<h:selectOneMenu id="grupo" value="#{pessoaJuridicaController.idGrupo}" required="true" requiredMessage="Grupo obrigatório.">
+						<f:selectItem itemLabel="Selecione um grupo" noSelectionOption="true"/>
+						<f:selectItems value="#{pessoaJuridicaController.grupos}" var="grupo" itemLabel="#{grupo.nome}" itemValue="#{grupo.id}"/>
 					</h:selectOneMenu>
 	  					
-	  				<h:outputText value="Fone" for="fone"></h:outputText>
-	  				<h:inputText id="fone" value="#{pessoaJuridicaController.pessoaJuridica.fone}"></h:inputText>
+	  				<h:outputText value="Fone" for="fone"/>
+	  				<h:inputText id="fone" value="#{pessoaJuridicaController.pessoaJuridica.fone}"/>
 	  				
-	  				<h:outputText value="Email" for="email"></h:outputText>
+	  				<h:outputText value="Email" for="email"/>
 	  				<h:inputText id="email" value="#{pessoaJuridicaController.pessoaJuridica.email}">
-	  					<f:passThroughAttribute name="type" value="email"></f:passThroughAttribute>
+	  					<f:passThroughAttribute name="type" value="email"/>
 	  				</h:inputText>
 	  				
-					<h:outputText value="Endereço" for="endereco"></h:outputText>
-	  				<h:inputText id="endereco" value="#{pessoaJuridicaController.pessoaJuridica.endereco}"></h:inputText>
+					<h:outputText value="Endereço" for="endereco"/>
+	  				<h:inputText id="endereco" value="#{pessoaJuridicaController.pessoaJuridica.endereco}" required="true" requiredMessage="Endereço obrigatório."/>
 	  				
-	  				<h:outputText value="Bairro" for="bairro"></h:outputText>
-	  				<h:inputText id="bairro" value="#{pessoaJuridicaController.pessoaJuridica.bairro}"></h:inputText>
+	  				<h:outputText value="Bairro" for="bairro"/>
+	  				<h:inputText id="bairro" value="#{pessoaJuridicaController.pessoaJuridica.bairro}" required="true" requiredMessage="Bairro obrigatório."/>
 	  				
-	  				<h:outputText value="Cidade" for="cidade"></h:outputText>
-	  				<h:inputText id="cidade" value="#{pessoaJuridicaController.pessoaJuridica.cidade}"></h:inputText>
+	  				<h:outputText value="Cidade" for="cidade"/>
+	  				<h:inputText id="cidade" value="#{pessoaJuridicaController.pessoaJuridica.cidade}"  required="true" requiredMessage="Cidade obrigatória."/>
 	  				
-	  				<h:outputText value="CEP" for="cep"></h:outputText>
-	  				<h:inputText id="cep" value="#{pessoaFisicaController.pessoaFisica.cep}"></h:inputText>
+	  				<h:outputText value="CEP" for="cep"/>
+	  				<h:inputText id="cep" value="#{pessoaJuridicaController.pessoaJuridica.cep}"  required="true" requiredMessage="CEP obrigatório."/>
 	  				
-	  				<h:outputText value="IE" for="ie"></h:outputText>
-	  				<h:inputText id="ie" value="#{pessoaJuridicaController.pessoaJuridica.ie}"></h:inputText>
+	  				<h:outputText value="IE" for="ie"/>
+	  				<h:inputText id="ie" value="#{pessoaJuridicaController.pessoaJuridica.ie}"  required="true" requiredMessage="Inscrição estadual obrigatória."/>
 	  				
-	  				<h:outputText value="CNPJ" for="cnpj"></h:outputText>
-	  				<h:inputText id="cnpj" value="#{pessoaJuridicaController.pessoaJuridica.cnpj}"></h:inputText>
+	  				<h:outputText value="CNPJ" for="cnpj"/>
+	  				<h:inputText id="cnpj" value="#{pessoaJuridicaController.pessoaJuridica.cnpj}"  required="true" requiredMessage="CNPJ obrigatório."/>
 	  				
-	  				<h:outputText value="Login" for="login"></h:outputText>
-	  				<h:inputText id="login" value="#{pessoaJuridicaController.pessoaJuridica.login}"></h:inputText>
+	  				<h:outputText value="Login" for="login"/>
+	  				<h:inputText id="login" value="#{pessoaJuridicaController.pessoaJuridica.login}"  required="true" requiredMessage="Login obrigatório."/>
 	  				
-	  				<h:outputText value="Senha" for="senha"></h:outputText>
-	  				<h:inputText id="senha" value="#{pessoaJuridicaController.pessoaJuridica.senha}"></h:inputText>
+	  				<h:outputText value="Senha" for="senha"/>
+	  				<h:inputText id="senha" value="#{pessoaJuridicaController.pessoaJuridica.senha}"  required="true" requiredMessage="Senha obrigatório.">
+						<f:passThroughAttribute name="type" value="password"/>
+					</h:inputText>
 	  				
-	  				<h:commandButton value="Gravar" action="#{pessoaJuridicaController.gravar(pessoaJuridicaController.pessoaJuridica)}"></h:commandButton>
+	  				<h:commandButton value="Gravar" action="#{pessoaJuridicaController.gravar(pessoaJuridicaController.pessoaJuridica)}"/>
 	  				
 	  			</h:panelGrid>
 	  		</fieldset>
@@ -86,72 +88,72 @@
 	  		<h:dataTable id="tabelaPessoasJuridicas" value="#{pessoaJuridicaController.pessoasJuridicas}" var="pessoa">
 				<h:column>
 					<f:facet name="header">Nome</f:facet>
-					<h:outputText value="#{pessoa.nome}"></h:outputText>
+					<h:outputText value="#{pessoa.nome}"/>
 				</h:column>
 				
 				<h:column>
 					<f:facet name="header">Grupo</f:facet>
-					<h:outputText value="#{pessoa.grupo.nome}"></h:outputText>
+					<h:outputText value="#{pessoa.grupo.nome}"/>
 				</h:column>
 				
 				<h:column>
 					<f:facet name="header">Fone</f:facet>
-					<h:outputText value="#{pessoa.fone}"></h:outputText>
+					<h:outputText value="#{pessoa.fone}"/>
 				</h:column>	
 					  	
 				<h:column>
 					<f:facet name="header">Email</f:facet>
-					<h:outputText value="#{pessoa.email}"></h:outputText>
+					<h:outputText value="#{pessoa.email}"/>
 				</h:column>
 				
 				<h:column>
 					<f:facet name="header">Endereço</f:facet>
-					<h:outputText value="#{pessoa.endereco}"></h:outputText>
+					<h:outputText value="#{pessoa.endereco}"/>
 				</h:column>	
 				
 				<h:column>
 					<f:facet name="header">Bairro</f:facet>
-					<h:outputText value="#{pessoa.bairro}"></h:outputText>
+					<h:outputText value="#{pessoa.bairro}"/>
 				</h:column>	
 				
 				<h:column>
 					<f:facet name="header">Cidade</f:facet>
-					<h:outputText value="#{pessoa.cidade}"></h:outputText>
+					<h:outputText value="#{pessoa.cidade}"/>
 				</h:column>	
 				
 				<h:column>
 					<f:facet name="header">CEP</f:facet>
-					<h:outputText value="#{pessoa.cep}"></h:outputText>
+					<h:outputText value="#{pessoa.cep}"/>
 				</h:column>	
 				
 				<h:column>
 					<f:facet name="header">IE</f:facet>
-					<h:outputText value="#{pessoa.ie}"></h:outputText>
+					<h:outputText value="#{pessoa.ie}"/>
 				</h:column>	
 				
 				<h:column>
 					<f:facet name="header">CNPJ</f:facet>
-					<h:outputText value="#{pessoa.cnpj}"></h:outputText>
+					<h:outputText value="#{pessoa.cnpj}"/>
 				</h:column>	
 				
 				<h:column>
 					<f:facet name="header">Login</f:facet>
-					<h:outputText value="#{pessoa.login}"></h:outputText>
+					<h:outputText value="#{pessoa.login}"/>
 				</h:column>	
-				
-				<h:column>
-					<f:facet name="header">Senha</f:facet>
-					<h:outputText value="#{pessoa.senha}"></h:outputText>
-				</h:column>	
+
+				<!--<h:column>-->
+					<!--<f:facet name="header">Senha</f:facet>-->
+					<!--<h:outputText value="#{pessoa.senha}"/>-->
+				<!--</h:column>	-->
 				
 				<h:column>
 					<f:facet name="header">Atualizar</f:facet>
-					<h:commandLink value="Atualizar" action="#{pessoaJuridicaController.carregar(pessoa)}"></h:commandLink>
+					<h:commandLink value="Atualizar" action="#{pessoaJuridicaController.carregar(pessoa)}"/>
 				</h:column>
 				
 				<h:column>
 					<f:facet name="header">Remover</f:facet>
-					<h:commandLink value="Remover" action="#{pessoaJuridicaController.remover(pessoa)}"></h:commandLink>
+					<h:commandLink value="Remover" action="#{pessoaJuridicaController.remover(pessoa)}"/>
 				</h:column>
 					  			
 	  		</h:dataTable>

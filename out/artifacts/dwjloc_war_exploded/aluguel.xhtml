@@ -15,6 +15,7 @@
 
     <ui:define name="content">
         <h:form>
+            <h:messages/>
             <h:panelGrid columns="2">
                 <h:outputText value="Cliente" for="cliente"/>
                 <h:selectOneMenu id="cliente" value="#{aluguelController.idCliente}">
@@ -53,12 +54,12 @@
                         />
                     </h:selectOneMenu>
 
-                    <h:inputText id="dataLocacao" value="#{aluguelController.dataLocacao.time}">
+                    <h:inputText id="dataLocacao" value="#{aluguelController.dataLocacao.time}"  required="true" requiredMessage="Data obrigatório.">
                         <f:convertDateTime pattern="yyyy-MM-dd" timeZone="America/Sao_Paulo"/>
                         <f:passThroughAttribute name="type" value="date"/>
                     </h:inputText>
 
-                    <h:inputText id="dataDevolucao" value="#{aluguelController.dataDevolucao.time}">
+                    <h:inputText id="dataDevolucao" value="#{aluguelController.dataDevolucao.time}"  required="true" requiredMessage="Prazo obrigatório.">
                         <f:convertDateTime pattern="yyyy-MM-dd" timeZone="America/Sao_Paulo"/>
                         <f:passThroughAttribute name="type" value="date"/>
                     </h:inputText>
@@ -118,7 +119,7 @@
                         </h:column>
                         <h:column>
                             <f:facet name="header">Pago</f:facet>
-                            <h:commandButton action="#{aluguelController.pagar(locacao)}" value="#{aluguelController.getPagoLabel(locacao)}" disabled="#{aluguelController.getPagoState(locacao)}"/>
+                            <h:commandButton action="#{aluguelController.pagar(locacao)}" value="#{aluguelController.getPagoLabel(locacao)}" disabled="#{aluguelController.getPagoState(locacao) || !locacao.entregue}"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">Remover</f:facet>
