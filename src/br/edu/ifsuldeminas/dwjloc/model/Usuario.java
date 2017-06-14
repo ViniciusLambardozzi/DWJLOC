@@ -28,6 +28,19 @@ public class Usuario
     private String login;
     private String senha;
 
+    @OneToMany(mappedBy = "usuario")
+    private List<FerramentaAlguel> locacoes;
+
+    public List<FerramentaAlguel> getLocacoes()
+    {
+        return locacoes;
+    }
+
+    public void setLocacoes(List<FerramentaAlguel> locacoes)
+    {
+        this.locacoes = locacoes;
+    }
+
     public Grupo getGrupo()
     {
         return grupo;
