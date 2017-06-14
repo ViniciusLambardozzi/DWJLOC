@@ -9,5 +9,11 @@ public class LibConstantes
 
 		public static final Integer ID_ESTADO_DISPONIVEL = 1;
 		public static final Integer ID_ESTADO_ALUGADO = 2;
+		public static final Integer ID_ESTADO_DANIFICADO = 3;
     }
+
+    public static class Financeiro
+	{
+		public static final Float ACRESCIMO_ATRASO = 0.1f;
+	}
 }

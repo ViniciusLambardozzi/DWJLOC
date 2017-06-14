@@ -19,7 +19,24 @@ public class DaoFerramentaAluguel
         query.setParameter("pUsuarioId", idCliente);
         query.setParameter("pPago", false);
         query.setParameter("pEntregue", false);
+        List<FerramentaAluguel> result = query.getResultList();
+        manager.close();
 
-        return query.getResultList();
+        return result;
+    }
+
+    public List<FerramentaAluguel> getHistorico(Integer idCliente)
+    {
+        String jpql = "SELECT f FROM FerramentaAluguel f WHERE f.usuario.id = :pUsuarioId AND (f.pago = :pPago AND f.entregue = :pEntregue)";
+
+        EntityManager manager = JPAUtil.getEntityManager();
+        Query query = manager.createQuery(jpql);
+        query.setParameter("pUsuarioId", idCliente);
+        query.setParameter("pPago", true);
+        query.setParameter("pEntregue", true);
+        List<FerramentaAluguel> result = query.getResultList();
+        manager.close();
+
+        return result;
     }
 }
