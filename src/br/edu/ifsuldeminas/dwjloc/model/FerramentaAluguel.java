@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.Calendar;
 
 @Entity
-public class FerramentaAlguel
+public class FerramentaAluguel
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

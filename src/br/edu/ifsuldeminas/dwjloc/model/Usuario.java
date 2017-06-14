@@ -29,14 +29,14 @@ public class Usuario
     private String senha;
 
     @OneToMany(mappedBy = "usuario")
-    private List<FerramentaAlguel> locacoes;
+    private List<FerramentaAluguel> locacoes;
 
-    public List<FerramentaAlguel> getLocacoes()
+    public List<FerramentaAluguel> getLocacoes()
     {
         return locacoes;
     }
 
-    public void setLocacoes(List<FerramentaAlguel> locacoes)
+    public void setLocacoes(List<FerramentaAluguel> locacoes)
     {
         this.locacoes = locacoes;
     }

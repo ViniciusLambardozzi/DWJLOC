@@ -59,4 +59,15 @@ public class DaoFerramenta
 
         return query.getResultList();
     }
+
+    public List<Ferramenta> getByTipoAndEstado(TipoFerramenta tipo, EstadoFerramenta estado, EntityManager manager)
+    {
+        String jpql = "SELECT f FROM Ferramenta f WHERE f.tipo = :pTipo AND f.estado = :pEstado";
+
+        Query query = manager.createQuery(jpql);
+        query.setParameter("pTipo", tipo);
+        query.setParameter("pEstado", estado);
+
+        return query.getResultList();
+    }
 }

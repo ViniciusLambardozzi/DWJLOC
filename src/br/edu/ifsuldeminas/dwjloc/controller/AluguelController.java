@@ -2,12 +2,14 @@ package br.edu.ifsuldeminas.dwjloc.controller;
 
 import br.edu.ifsuldeminas.dwjloc.dao.Dao;
 import br.edu.ifsuldeminas.dwjloc.dao.DaoFerramenta;
+import br.edu.ifsuldeminas.dwjloc.dao.DaoFerramentaAluguel;
 import br.edu.ifsuldeminas.dwjloc.lib.LibConstantes;
-import br.edu.ifsuldeminas.dwjloc.model.EstadoFerramenta;
-import br.edu.ifsuldeminas.dwjloc.model.TipoFerramenta;
+import br.edu.ifsuldeminas.dwjloc.model.*;
+import br.edu.ifsuldeminas.dwjloc.util.JPAUtil;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.persistence.EntityManager;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -27,6 +29,71 @@ public class AluguelController
     public void adicionarLocacao()
     {
         System.out.println(this);
+
+        // Lista de ferramentas disponíveis
+        EntityManager manager = JPAUtil.getEntityManager();
+        manager.getTransaction().begin();
+
+        try
+        {
+            Usuario usuario = new Dao<Usuario>(Usuario.class).getById(idCliente, manager);
+
+            TipoFerramenta tipo = new Dao<TipoFerramenta>(TipoFerramenta.class).getById(idTipo, manager);
+            EstadoFerramenta estadoDisponivel = new Dao<EstadoFerramenta>(EstadoFerramenta.class).getById(LibConstantes.Banco.ID_ESTADO_DISPONIVEL, manager);
+            EstadoFerramenta estadoAlugado = new Dao<EstadoFerramenta>(EstadoFerramenta.class).getById(LibConstantes.Banco.ID_ESTADO_ALUGADO, manager);
+
+            List<Ferramenta> disponiveis = new DaoFerramenta().getByTipoAndEstado(tipo, estadoDisponivel, manager);
+
+            // Lista de ferramentas que serão alugadas
+            List<Ferramenta> ferramentas = disponiveis.subList(0, quantidade);
+
+            for (Ferramenta ferramenta : ferramentas)
+            {
+                System.out.println(ferramenta.getCodigo());
+                FerramentaAluguel locacao = new FerramentaAluguel();
+                locacao.setPago(false);
+                locacao.setEntregue(false);
+                locacao.setDataLocacao(dataLocacao);
+                locacao.setPrazoDevolucao(dataDevolucao);
+                locacao.setFerramenta(ferramenta);
+                locacao.setUsuario(usuario);
+
+                ferramenta.setEstado(estadoAlugado);
+
+                new Dao<FerramentaAluguel>(FerramentaAluguel.class).add(locacao, manager);
+            }
+
+            manager.getTransaction().commit();
+        }catch (Exception e)
+        {
+            manager.getTransaction().rollback();
+        }finally
+        {
+            manager.close();
+        }
+    }
+
+    public void remover(FerramentaAluguel locacao)
+    {
+        EntityManager manager = JPAUtil.getEntityManager();
+        manager.getTransaction().begin();
+        try
+        {
+            EstadoFerramenta estadoDisponivel = new Dao<EstadoFerramenta>(EstadoFerramenta.class).getById(LibConstantes.Banco.ID_ESTADO_DISPONIVEL, manager);
+
+            locacao = new Dao<FerramentaAluguel>(FerramentaAluguel.class).getById(locacao.getId(), manager);
+            locacao.getFerramenta().setEstado(estadoDisponivel);
+
+            new Dao<FerramentaAluguel>(FerramentaAluguel.class).remove(locacao, manager);
+
+            manager.getTransaction().commit();
+        }catch (Exception e)
+        {
+            manager.getTransaction().rollback();
+        }finally
+        {
+            manager.close();
+        }
     }
 
     public List<Integer> getQuantidadeDisponivel()
@@ -46,6 +113,16 @@ public class AluguelController
             quantidades.add(i);
         }
         return quantidades;
+    }
+
+    public List<FerramentaAluguel> getPendencias()
+    {
+        if(idCliente == null)
+        {
+            return new ArrayList<>();
+        }
+
+        return new DaoFerramentaAluguel().getPendencias(idCliente);
     }
 
     public Integer getIdCliente()
