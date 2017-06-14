@@ -15,6 +15,17 @@ import java.util.List;
 
 public class DaoFerramenta
 {
+    public Ferramenta setEstado(Ferramenta ferramenta, EstadoFerramenta estado)
+    {
+        EntityManager manager = JPAUtil.getEntityManager();
+        manager.getTransaction().begin();
+        ferramenta = manager.find(Ferramenta.class, ferramenta.getId());
+        ferramenta.setEstado(estado);
+        manager.getTransaction().commit();
+        manager.close();
+        return ferramenta;
+    }
+
     public List<Ferramenta> getByEstado(EstadoFerramenta estado)
     {
         String jpql = "SELECT f FROM Ferramenta f WHERE f.estado = :pEstado";

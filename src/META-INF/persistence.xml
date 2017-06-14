@@ -14,6 +14,14 @@
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
 
         <!-- Aqui são listadas todas as entidades -->
+        <class>br.edu.ifsuldeminas.dwjloc.model.EstadoFerramenta</class>
+        <class>br.edu.ifsuldeminas.dwjloc.model.Ferramenta</class>
+        <class>br.edu.ifsuldeminas.dwjloc.model.Funcionalidade</class>
+        <class>br.edu.ifsuldeminas.dwjloc.model.Grupo</class>
+        <class>br.edu.ifsuldeminas.dwjloc.model.PessoaFisica</class>
+        <class>br.edu.ifsuldeminas.dwjloc.model.PessoaJuridica</class>
+        <class>br.edu.ifsuldeminas.dwjloc.model.TipoFerramenta</class>
+        <class>br.edu.ifsuldeminas.dwjloc.model.Usuario</class>
 
 
         <properties>
