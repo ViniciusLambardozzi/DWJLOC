@@ -4,23 +4,38 @@ import br.edu.ifsuldeminas.dwjloc.model.Ferramenta;
 import br.edu.ifsuldeminas.dwjloc.model.FerramentaAluguel;
 import br.edu.ifsuldeminas.dwjloc.util.JPAUtil;
 
+import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import java.util.List;
 
 public class DaoFerramentaAluguel
 {
-    public List<FerramentaAluguel> getLocacoes(Integer idCliente, boolean entregue, boolean pago)
+    public List<FerramentaAluguel> getPendencias(Integer idCliente)
     {
-        List<FerramentaAluguel> result = null;
+        String jpql = "SELECT f FROM FerramentaAluguel f WHERE f.usuario.id = :pUsuarioId AND (f.pago = :pPago OR f.entregue = :pEntregue)";
 
-        String jpql = "SELECT f FROM FerramentaAluguel f WHERE f.usuario.id = :pUsuarioId AND (f.entregue = :pEntregue OR f.pago = :pPago)";
-        Query query = JPAUtil.getEntityManager().createQuery(jpql, FerramentaAluguel.class);
-
+        EntityManager manager = JPAUtil.getEntityManager();
+        Query query = manager.createQuery(jpql);
         query.setParameter("pUsuarioId", idCliente);
-        query.setParameter("pEntregue", entregue);
-        query.setParameter("pPago", pago);
+        query.setParameter("pPago", false);
+        query.setParameter("pEntregue", false);
+        List<FerramentaAluguel> result = query.getResultList();
+        manager.close();
 
-        result = query.getResultList();
+        return result;
+    }
+
+    public List<FerramentaAluguel> getHistorico(Integer idCliente)
+    {
+        String jpql = "SELECT f FROM FerramentaAluguel f WHERE f.usuario.id = :pUsuarioId AND (f.pago = :pPago AND f.entregue = :pEntregue)";
+
+        EntityManager manager = JPAUtil.getEntityManager();
+        Query query = manager.createQuery(jpql);
+        query.setParameter("pUsuarioId", idCliente);
+        query.setParameter("pPago", true);
+        query.setParameter("pEntregue", true);
+        List<FerramentaAluguel> result = query.getResultList();
+        manager.close();
 
         return result;
     }

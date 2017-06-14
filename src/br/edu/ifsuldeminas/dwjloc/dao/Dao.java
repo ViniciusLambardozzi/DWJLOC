@@ -7,9 +7,6 @@ import javax.persistence.Query;
 
 import br.edu.ifsuldeminas.dwjloc.util.JPAUtil;
 
-/**
- * File created @[4/26/2017]
- */
 public class Dao<T>
 {
     private final Class<T> baseClass;
@@ -85,6 +82,50 @@ public class Dao<T>
         Long result = (Long)query.getSingleResult();
 
         manager.close();
+
+        return result;
+    }
+
+    // Safe transaction methods
+    public void add(T t, EntityManager manager)
+    {
+        manager.persist(t);
+    }
+
+    public void remove(T t, EntityManager manager)
+    {
+        t = manager.merge(t);
+        manager.remove(t);
+    }
+
+    public void update(T t, EntityManager manager)
+    {
+        manager.merge(t);
+    }
+
+    public List<T> getAll(EntityManager manager)
+    {
+        String jpql = "SELECT t FROM " + baseClass.getName() + " t";
+        Query query = manager.createQuery(jpql);
+
+        List<T> result = query.getResultList();
+
+        return result;
+    }
+
+    public T getById(int id, EntityManager manager)
+    {
+        T t = manager.find(baseClass, id);
+
+        return t;
+    }
+
+    public Long getCount(EntityManager manager)
+    {
+        String jpql = "SELECT count(s) FROM " + baseClass.getName() + " s";
+        Query query = manager.createQuery(jpql);
+
+        Long result = (Long)query.getSingleResult();
 
         return result;
     }

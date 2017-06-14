@@ -1,8 +1,7 @@
 package br.edu.ifsuldeminas.dwjloc.model;
 
-import com.sun.xml.internal.ws.client.ClientTransportException;
+import com.sun.javafx.beans.IDProperty;
 
-import javax.annotation.Generated;
 import javax.persistence.*;
 import java.util.Calendar;
 
@@ -11,7 +10,14 @@ public class FerramentaAluguel
 {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer Id;
+    private Integer id;
+
+    @Temporal(TemporalType.DATE)
+    private Calendar dataLocacao;
+    @Temporal(TemporalType.DATE)
+    private Calendar prazoDevolucao;
+    @Temporal(TemporalType.DATE)
+    private Calendar dataDevolucao;
 
     @ManyToOne
     private Ferramenta ferramenta;
@@ -19,44 +25,24 @@ public class FerramentaAluguel
     @ManyToOne
     private Usuario usuario;
 
-    @Temporal(TemporalType.DATE)
-    private Calendar dataLocacao;
-    @Temporal(TemporalType.DATE)
-    private Calendar prazoDevolucao;
-
     private Float valorDiario;
+
+    private Float acrescimo;
+    private Float desconto;
+
+    private Boolean multa;
 
     private Boolean entregue;
     private Boolean pago;
 
     public Integer getId()
     {
-        return Id;
+        return id;
     }
 
     public void setId(Integer id)
     {
-        Id = id;
-    }
-
-    public Ferramenta getFerramenta()
-    {
-        return ferramenta;
-    }
-
-    public void setFerramenta(Ferramenta ferramenta)
-    {
-        this.ferramenta = ferramenta;
-    }
-
-    public Usuario getUsuario()
-    {
-        return usuario;
-    }
-
-    public void setUsuario(Usuario usuario)
-    {
-        this.usuario = usuario;
+        this.id = id;
     }
 
     public Calendar getDataLocacao()
@@ -79,14 +65,24 @@ public class FerramentaAluguel
         this.prazoDevolucao = prazoDevolucao;
     }
 
-    public Float getValorDiario()
+    public Ferramenta getFerramenta()
     {
-        return valorDiario;
+        return ferramenta;
     }
 
-    public void setValorDiario(Float valorDiario)
+    public void setFerramenta(Ferramenta ferramenta)
     {
-        this.valorDiario = valorDiario;
+        this.ferramenta = ferramenta;
+    }
+
+    public Usuario getUsuario()
+    {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario)
+    {
+        this.usuario = usuario;
     }
 
     public Boolean getEntregue()
@@ -109,12 +105,53 @@ public class FerramentaAluguel
         this.pago = pago;
     }
 
-    @Override
-    public String toString()
+    public Float getAcrescimo()
     {
-        return "FerramentaAluguel{" +
-                "ferramenta=" + ferramenta.getTipo() +
-                ", usuario=" + usuario.getId() +
-                '}';
+        return acrescimo;
+    }
+
+    public void setAcrescimo(Float acrescimo)
+    {
+        this.acrescimo = acrescimo;
+    }
+
+    public Float getDesconto()
+    {
+        return desconto;
+    }
+
+    public void setDesconto(Float desconto)
+    {
+        this.desconto = desconto;
+    }
+
+    public Boolean getMulta()
+    {
+        return multa;
+    }
+
+    public void setMulta(Boolean multa)
+    {
+        this.multa = multa;
+    }
+
+    public Calendar getDataDevolucao()
+    {
+        return dataDevolucao;
+    }
+
+    public void setDataDevolucao(Calendar dataDevolucao)
+    {
+        this.dataDevolucao = dataDevolucao;
+    }
+
+    public Float getValorDiario()
+    {
+        return valorDiario;
+    }
+
+    public void setValorDiario(Float valorDiario)
+    {
+        this.valorDiario = valorDiario;
     }
 }

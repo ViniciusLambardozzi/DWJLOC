@@ -14,6 +14,14 @@
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
 
         <!-- Aqui são listadas todas as entidades -->
+        <class>br.edu.ifsuldeminas.dwjloc.model.EstadoFerramenta</class>
+        <class>br.edu.ifsuldeminas.dwjloc.model.Ferramenta</class>
+        <class>br.edu.ifsuldeminas.dwjloc.model.Funcionalidade</class>
+        <class>br.edu.ifsuldeminas.dwjloc.model.Grupo</class>
+        <class>br.edu.ifsuldeminas.dwjloc.model.PessoaFisica</class>
+        <class>br.edu.ifsuldeminas.dwjloc.model.PessoaJuridica</class>
+        <class>br.edu.ifsuldeminas.dwjloc.model.TipoFerramenta</class>
+        <class>br.edu.ifsuldeminas.dwjloc.model.Usuario</class>
 
 
         <properties>
@@ -26,7 +34,7 @@
             <!-- Configurações específicas do Hibernate -->
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
             <property name="hibernate.hbm2ddl.auto" value="update" /> 	<!-- Criação automatizada -->
-            <property name="hibernate.show_sql" value="true" />			<!-- Mostra SQL -->
+            <property name="hibernate.show_sql" value="false" />			<!-- Mostra SQL -->
             <property name="hibernate.format_sql" value="true" />		<!-- SQL formatado -->
         </properties>
     </persistence-unit>

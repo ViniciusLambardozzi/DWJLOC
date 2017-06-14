@@ -15,6 +15,17 @@ import java.util.List;
 
 public class DaoFerramenta
 {
+    public Ferramenta setEstado(Ferramenta ferramenta, EstadoFerramenta estado)
+    {
+        EntityManager manager = JPAUtil.getEntityManager();
+        manager.getTransaction().begin();
+        ferramenta = manager.find(Ferramenta.class, ferramenta.getId());
+        ferramenta.setEstado(estado);
+        manager.getTransaction().commit();
+        manager.close();
+        return ferramenta;
+    }
+
     public List<Ferramenta> getByEstado(EstadoFerramenta estado)
     {
         String jpql = "SELECT f FROM Ferramenta f WHERE f.estado = :pEstado";
@@ -41,6 +52,17 @@ public class DaoFerramenta
     {
         String jpql = "SELECT f FROM Ferramenta f WHERE f.tipo = :pTipo AND f.estado = :pEstado";
         EntityManager manager = JPAUtil.getEntityManager();
+
+        Query query = manager.createQuery(jpql);
+        query.setParameter("pTipo", tipo);
+        query.setParameter("pEstado", estado);
+
+        return query.getResultList();
+    }
+
+    public List<Ferramenta> getByTipoAndEstado(TipoFerramenta tipo, EstadoFerramenta estado, EntityManager manager)
+    {
+        String jpql = "SELECT f FROM Ferramenta f WHERE f.tipo = :pTipo AND f.estado = :pEstado";
 
         Query query = manager.createQuery(jpql);
         query.setParameter("pTipo", tipo);
