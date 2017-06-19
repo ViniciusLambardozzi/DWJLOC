@@ -4,6 +4,7 @@ import br.edu.ifsuldeminas.dwjloc.dao.Dao;
 import br.edu.ifsuldeminas.dwjloc.model.Funcionalidade;
 import br.edu.ifsuldeminas.dwjloc.model.Grupo;
 import br.edu.ifsuldeminas.dwjloc.util.JPAUtil;
+import br.edu.ifsuldeminas.dwjloc.dao.GrupoDao;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -104,6 +105,14 @@ public class GrupoFuncionalidadesController
         }
 
         return ok;
+    }
+
+    public List<Funcionalidade> getMissingFuncionalidades(Integer idGrupo)
+    {
+        Grupo grupo = new Grupo();
+        grupo.setId(idGrupo);
+
+        return new GrupoDao().getMissingFuncionalidades(grupo);
     }
 
     public Integer getIdGrupo()

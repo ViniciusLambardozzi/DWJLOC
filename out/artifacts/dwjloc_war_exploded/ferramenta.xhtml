@@ -13,40 +13,58 @@
 	<ui:define name="titulo">Ferramenta</ui:define>
 	  
 	  <ui:define name="content">
+	  <h:messages class="alert alert-danger"/>
+	  <div class="panel panel-default">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Cadastrar</h3>
+		  </div>
+		  <div class="panel-body">
 	  	<h:form>
-	  		<h:messages/>
-	  		<fieldset>
-	  			<legend>Cadastrar</legend>
-	  			<h:panelGrid columns="2">
-	  				<h:outputText value="Código" for="codigo"/>
-	  				<h:inputText id="codigo" value="#{ferramentaController.ferramenta.codigo}"  required="true" requiredMessage="Código obrigatório."/>
+
+
+				<div class="form-group">
+	  				<label>Código</label>
+	  				<h:inputText id="codigo" value="#{ferramentaController.ferramenta.codigo}"  required="true" requiredMessage="Código obrigatório." class="form-control"/>
+	  			</div>
 	  				
-	  				<h:outputText value="Tipo" for="tipo"/>
-					<h:selectOneMenu id="tipo" value="#{ferramentaController.idTipo}"  required="true" requiredMessage="Tipo obrigatório.">
+	  			<div class="form-group">
+	  				<label>Tipo</label>
+					<h:selectOneMenu id="tipo" value="#{ferramentaController.idTipo}"  required="true" requiredMessage="Tipo obrigatório." class="form-control">
 						<f:selectItem itemLabel="Selecione um tipo" noSelectionOption="true"/>
 						<f:selectItems value="#{tipoFerramentaController.tiposFerramentas}" var="tipo" itemLabel="#{tipo.nome}" itemValue="#{tipo.id}"/>
 					</h:selectOneMenu>
+				</div>
 					
-					<h:outputText value="Estado" for="estado"/>
-					<h:selectOneMenu id="estado" value="#{ferramentaController.idEstado}"  required="true" requiredMessage="Estado obrigatório.">
+				<div class="form-group">
+					<label>Estado</label>
+					<h:selectOneMenu id="estado" value="#{ferramentaController.idEstado}"  required="true" requiredMessage="Estado obrigatório." class="form-control">
 						<f:selectItem itemLabel="Selecione um estado" noSelectionOption="true"/>
 						<f:selectItems value="#{estadoFerramentaController.estadosFerramentas}" var="estado" itemLabel="#{estado.nome}" itemValue="#{estado.id}"/>
 					</h:selectOneMenu>
+				</div>
 	  					
-	  				<h:outputText value="Preço" for="preco" required="true" requiredMessage="Preço obrigatório."/>
-	  				<h:inputText id="preco" value="#{ferramentaController.ferramenta.preco}"/>
+	  			<div class="form-group">
+	  				<label>Preço</label>
+	  				<h:inputText id="preco" value="#{ferramentaController.ferramenta.preco}" required="true" requiredMessage="Preço obrigatório." class="form-control"/>
+	  			</div>
 	  				
-	  				<h:outputText value="Preço de aluguel" for="aluguel"/>
-	  				<h:inputText id="aluguel" value="#{ferramentaController.ferramenta.precoAluguel}"  required="true" requiredMessage="Preço de aluguel obrigatório."/>
+	  			<div class="form-group">
+	  				<label>Preço de aluguel</label>
+	  				<h:inputText id="aluguel" value="#{ferramentaController.ferramenta.precoAluguel}"  required="true" requiredMessage="Preço de aluguel obrigatório." class="form-control"/>
+	  			</div>
 	  				
-	  				<h:commandButton value="Gravar" action="#{ferramentaController.gravar}"/>
-	  				
-	  			</h:panelGrid>
-	  		</fieldset>
+	  			<div align="right">
+	  				<h:commandButton value="Gravar" action="#{ferramentaController.gravar}" class="btn btn-success"/>
+	  			</div>
+
 	  	</h:form>
+	  	</div>
+	  	</div>
 	  	
+	  	<div class="panel panel-default">
+  		<div class="panel-body">
 	  	<h:form id="formTabelaFerramentas">
-	  		<h:dataTable id="tabelaFerramentas" value="#{ferramentaController.ferramentas}" var="ferramenta">
+	  		<h:dataTable id="tabelaFerramentas" value="#{ferramentaController.ferramentas}" var="ferramenta" class="table table-hover">
 				<h:column>
 					<f:facet name="header">Codigo</f:facet>
 					<h:outputText value="#{ferramenta.codigo}"/>
@@ -74,16 +92,18 @@
 				
 				<h:column>
 					<f:facet name="header">Atualizar</f:facet>
-					<h:commandLink value="Atualizar" action="#{ferramentaController.carregar(ferramenta)}"/>
+					<h:commandLink value="Atualizar" action="#{ferramentaController.carregar(ferramenta)}" class="btn btn-warning"/>
 				</h:column>
 				
 				<h:column>
 					<f:facet name="header">Remover</f:facet>
-					<h:commandLink value="Remover" action="#{ferramentaController.remover(ferramenta)}"/>
+					<h:commandLink value="Remover" action="#{ferramentaController.remover(ferramenta)}" class="btn btn-danger"/>
 				</h:column>
 					  			
 	  		</h:dataTable>
 	  	</h:form>
+	  	</div>
+	  	</div>
 	  	
 	  	</ui:define>
 	  </ui:composition>

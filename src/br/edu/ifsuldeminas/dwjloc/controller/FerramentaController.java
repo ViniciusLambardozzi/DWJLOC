@@ -2,13 +2,16 @@ package br.edu.ifsuldeminas.dwjloc.controller;
 
 import java.util.List;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
 
 import br.edu.ifsuldeminas.dwjloc.dao.Dao;
 import br.edu.ifsuldeminas.dwjloc.dao.DaoFerramenta;
 import br.edu.ifsuldeminas.dwjloc.model.EstadoFerramenta;
 import br.edu.ifsuldeminas.dwjloc.model.Ferramenta;
+import br.edu.ifsuldeminas.dwjloc.model.PessoaFisica;
 import br.edu.ifsuldeminas.dwjloc.model.TipoFerramenta;
 
 @ManagedBean
@@ -83,6 +86,12 @@ public class FerramentaController
 	
 	public void remover(Ferramenta ferramenta)
 	{
-		new Dao<Ferramenta>(Ferramenta.class).remove(ferramenta);
+		try
+		{
+			new Dao<Ferramenta>(Ferramenta.class).remove(ferramenta);
+		}catch (Exception e)
+		{
+			FacesContext.getCurrentInstance().addMessage("ferramenta", new FacesMessage("Não é possível remover uma ferramenta com locações salvas."));
+		}
 	}
 }

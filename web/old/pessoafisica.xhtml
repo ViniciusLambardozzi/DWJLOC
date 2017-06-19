@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html 
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	>
+	  
+	<ui:composition template="_template.xhtml">
+	
+	<ui:define name="title">Pessoa Física</ui:define>
+	<ui:define name="titulo">Pessoa Física</ui:define>
+	  
+	  <ui:define name="content">
+	  	<h:form>
+	  		<h:messages/>
+	  		<fieldset>
+	  			<legend>Cadastrar</legend>
+	  			<h:panelGrid columns="2">
+	  				
+	  				<h:outputText value="Nome" for="nome"/>
+	  				<h:inputText id="nome" value="#{pessoaFisicaController.pessoaFisica.nome}" required="true" requiredMessage="Nome obrigatório."/>
+	  					
+					<h:outputText value="Grupo" for="grupo"/>
+					<h:selectOneMenu id="grupo" value="#{pessoaFisicaController.idGrupo}"  required="true" requiredMessage="Grupo obrigatório.">
+						<f:selectItem itemLabel="Selecione um grupo" noSelectionOption="true"/>
+						<f:selectItems value="#{pessoaFisicaController.grupos}" var="grupo" itemLabel="#{grupo.nome}" itemValue="#{grupo.id}"/>
+					</h:selectOneMenu>	  					
+
+	  				<h:outputText value="Fone" for="fone"/>
+	  				<h:inputText id="fone" value="#{pessoaFisicaController.pessoaFisica.fone}"/>
+	  				
+	  				<h:outputText value="Email" for="email"/>
+	  				<h:inputText id="email" value="#{pessoaFisicaController.pessoaFisica.email}">
+	  					<f:passThroughAttribute name="type" value="email"/>
+	  				</h:inputText>
+	  				
+					<h:outputText value="Endereço" for="endereco"  required="true" requiredMessage="Endereço obrigatório."/>
+	  				<h:inputText id="endereco" value="#{pessoaFisicaController.pessoaFisica.endereco}"/>
+	  				
+	  				<h:outputText value="Bairro" for="bairro"/>
+	  				<h:inputText id="bairro" value="#{pessoaFisicaController.pessoaFisica.bairro}" required="true" requiredMessage="Bairro obrigatório."/>
+	  				
+	  				<h:outputText value="Cidade" for="cidade"/>
+	  				<h:inputText id="cidade" value="#{pessoaFisicaController.pessoaFisica.cidade}"  required="true" requiredMessage="Bairro obrigatório."/>
+	  				
+	  				<h:outputText value="CEP" for="cep"/>
+	  				<h:inputText id="cep" value="#{pessoaFisicaController.pessoaFisica.cep}"  required="true" requiredMessage="CEP obrigatório."/>
+	  				
+	  				<h:outputText value="RG" for="rg"/>
+	  				<h:inputText id="rg" value="#{pessoaFisicaController.pessoaFisica.rg}"  required="true" requiredMessage="RG obrigatório."/>
+	  				
+	  				<h:outputText value="CPF" for="cpf"/>
+	  				<h:inputText id="cpf" value="#{pessoaFisicaController.pessoaFisica.cpf}"  required="true" requiredMessage="CPF obrigatório."/>
+	  				
+	  				<h:outputText value="Login" for="login"/>
+	  				<h:inputText id="login" value="#{pessoaFisicaController.pessoaFisica.login}"  required="true" requiredMessage="Login obrigatório."/>
+	  				
+	  				<h:outputText value="Senha" for="senha"/>
+	  				<h:inputText id="senha" value="#{pessoaFisicaController.pessoaFisica.senha}"  required="true" requiredMessage="Senha obrigatória.">
+						<f:passThroughAttribute name="type" value="password"/>
+					</h:inputText>
+	  				
+	  				<h:commandButton value="Gravar" action="#{pessoaFisicaController.gravar(pessoaFisicaController.pessoaFisica)}"/>
+	  				
+	  			</h:panelGrid>
+	  		</fieldset>
+	  	</h:form>
+	  	
+	  	<h:form id="formTabelaPessoasFisicas">
+	  		<h:dataTable id="tabelaPessoasFisicas" value="#{pessoaFisicaController.pessoasFisicas}" var="pessoa">
+				<h:column>
+					<f:facet name="header">Nome</f:facet>
+					<h:outputText value="#{pessoa.nome}"/>
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Grupo</f:facet>
+					<h:outputText value="#{pessoa.grupo.nome}"/>
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Fone</f:facet>
+					<h:outputText value="#{pessoa.fone}"/>
+				</h:column>	
+					  	
+				<h:column>
+					<f:facet name="header">Email</f:facet>
+					<h:outputText value="#{pessoa.email}"/>
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Endereço</f:facet>
+					<h:outputText value="#{pessoa.endereco}"/>
+				</h:column>	
+				
+				<h:column>
+					<f:facet name="header">Bairro</f:facet>
+					<h:outputText value="#{pessoa.bairro}"/>
+				</h:column>	
+				
+				<h:column>
+					<f:facet name="header">Cidade</f:facet>
+					<h:outputText value="#{pessoa.cidade}"/>
+				</h:column>	
+				
+				<h:column>
+					<f:facet name="header">CEP</f:facet>
+					<h:outputText value="#{pessoa.cep}"/>
+				</h:column>	
+				
+				<h:column>
+					<f:facet name="header">RG</f:facet>
+					<h:outputText value="#{pessoa.rg}"/>
+				</h:column>	
+				
+				<h:column>
+					<f:facet name="header">CPF</f:facet>
+					<h:outputText value="#{pessoa.cpf}"/>
+				</h:column>	
+				
+				<h:column>
+					<f:facet name="header">Login</f:facet>
+					<h:outputText value="#{pessoa.login}"/>
+				</h:column>	
+				
+				<h:column>
+					<f:facet name="header">Senha</f:facet>
+					<h:outputText value="#{pessoa.senha}"/>
+				</h:column>	
+				
+				<h:column>
+					<f:facet name="header">Atualizar</f:facet>
+					<h:commandLink value="Atualizar" action="#{pessoaFisicaController.carregar(pessoa)}"/>
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">Remover</f:facet>
+					<h:commandLink value="Remover" action="#{pessoaFisicaController.remover(pessoa)}"/>
+				</h:column>
+					  			
+	  		</h:dataTable>
+	  	</h:form>
+	  	
+	  	</ui:define>
+	  </ui:composition>
+</html>

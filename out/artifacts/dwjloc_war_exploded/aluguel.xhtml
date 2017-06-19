@@ -14,11 +14,17 @@
     <ui:define name="titulo">Locação</ui:define>
 
     <ui:define name="content">
-        <h:form>
-            <h:messages/>
-            <h:panelGrid columns="2">
-                <h:outputText value="Cliente" for="cliente"/>
-                <h:selectOneMenu id="cliente" value="#{aluguelController.idCliente}">
+    <h:messages class="alert alert-danger"/>
+        <h:form class="form-inline">
+            
+          <div class="panel panel-success">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Cliente</h3>
+		  </div>
+		  <div class="panel-body">
+		  	<div class="form-group">
+				<label>Escolha um cliente: </label>
+                <h:selectOneMenu id="cliente" value="#{aluguelController.idCliente}" class="form-control">
                     <f:selectItem itemLabel="Selecione um cliente" noSelectionOption="true"/>
                     <f:selectItems
                             value="#{usuarioController.usuarios}"
@@ -28,12 +34,17 @@
                     />
                     <f:ajax event="change" execute="tabelaPendencias tabelaHistorico" render="tabelaPendencias tabelaHistorico"/>
                 </h:selectOneMenu>
-            </h:panelGrid>
+               </div>
+          </div>
 
-            <fieldset>
-                <legend>Nova locação</legend>
-                <h:panelGrid columns="5">
-                    <h:selectOneMenu id="tipo" value="#{aluguelController.idTipo}">
+		
+		<div class="panel panel-success">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Nova locação</h3>
+		  </div>
+		  <div class="panel-body">
+				<div class="form-group">
+                    <h:selectOneMenu id="tipo" value="#{aluguelController.idTipo}" class="form-control">
                         <f:selectItem itemLabel="Selecione um tipo" noSelectionOption="true"/>
                         <f:selectItems
                                 value="#{tipoFerramentaController.tiposFerramentas}"
@@ -43,8 +54,10 @@
                         />
                         <f:ajax event="change" execute="quantidade" render="quantidade"/>
                     </h:selectOneMenu>
+                  </div>
 
-                    <h:selectOneMenu id="quantidade" value="#{aluguelController.quantidade}">
+				<div class="form-group">
+                    <h:selectOneMenu id="quantidade" value="#{aluguelController.quantidade}" class="form-control">
                         <f:selectItem itemLabel="Selecione uma quantidade" noSelectionOption="true"/>
                         <f:selectItems
                                 value="#{aluguelController.quantidadeDisponivel}"
@@ -53,24 +66,37 @@
                                 itemValue="#{quantidade}"
                         />
                     </h:selectOneMenu>
+                  </div>
 
-                    <h:inputText id="dataLocacao" value="#{aluguelController.dataLocacao.time}"  required="true" requiredMessage="Data obrigatório.">
+				<div class="form-group">
+                    <h:inputText id="dataLocacao" value="#{aluguelController.dataLocacao.time}"  required="true" requiredMessage="Data obrigatório." class="form-control">
                         <f:convertDateTime pattern="yyyy-MM-dd" timeZone="America/Sao_Paulo"/>
                         <f:passThroughAttribute name="type" value="date"/>
                     </h:inputText>
+                </div>
 
-                    <h:inputText id="dataDevolucao" value="#{aluguelController.dataDevolucao.time}"  required="true" requiredMessage="Prazo obrigatório.">
+				<div class="form-group">
+                    <h:inputText id="dataDevolucao" value="#{aluguelController.dataDevolucao.time}"  required="true" requiredMessage="Prazo obrigatório." class="form-control">
                         <f:convertDateTime pattern="yyyy-MM-dd" timeZone="America/Sao_Paulo"/>
                         <f:passThroughAttribute name="type" value="date"/>
                     </h:inputText>
+                </div>
+                
+                	<div class="form-group">
+                    	<h:commandButton value="Locar" action="#{aluguelController.adicionarLocacao}" class="btn btn-success"/>
+                    </div>
+                    
+                </div>
+              </div>
+            </div>
 
-                    <h:commandButton value="Locar" action="#{aluguelController.adicionarLocacao}"/>
-                </h:panelGrid>
-            </fieldset>
 
-            <fieldset>
-                <legend>Pendências</legend>
-                    <h:dataTable id="tabelaPendencias" value="#{aluguelController.pendencias}" var="locacao">
+           <div class="panel panel-danger">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Pendências</h3>
+		  </div>
+		  <div class="panel-body">
+                    <h:dataTable id="tabelaPendencias" value="#{aluguelController.pendencias}" var="locacao" class="table table-hover">
                         <h:column>
                             <f:facet name="header">Tipo</f:facet>
                             <h:outputText value="#{locacao.ferramenta.tipo.nome}"/>
@@ -115,22 +141,26 @@
                         </h:column>
                         <h:column>
                             <f:facet name="header">Entregue</f:facet>
-                            <h:commandButton immediate="true" action="#{aluguelController.entregar(locacao)}" value="#{aluguelController.getEntregueLabel(locacao)}" disabled="#{aluguelController.getEntregueState(locacao)}"/>
+                            <h:commandButton immediate="true" action="#{aluguelController.entregar(locacao)}" value="#{aluguelController.getEntregueLabel(locacao)}" disabled="#{aluguelController.getEntregueState(locacao)}" class="btn btn-warning"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">Pago</f:facet>
-                            <h:commandButton action="#{aluguelController.pagar(locacao)}" value="#{aluguelController.getPagoLabel(locacao)}" disabled="#{aluguelController.getPagoState(locacao) || !locacao.entregue}"/>
+                            <h:commandButton action="#{aluguelController.pagar(locacao)}" value="#{aluguelController.getPagoLabel(locacao)}" disabled="#{aluguelController.getPagoState(locacao) || !locacao.entregue}" class="btn btn-success"/>
                         </h:column>
                         <h:column>
                             <f:facet name="header">Remover</f:facet>
-                            <h:commandButton value="Remover" action="#{aluguelController.remover(locacao)}"/>
+                            <h:commandButton value="Remover" action="#{aluguelController.remover(locacao)}" class="btn btn-danger"/>
                         </h:column>
                     </h:dataTable>
-            </fieldset>
+            </div>
+            </div>
 
-            <fieldset>
-                <legend>Histórico</legend>
-                <h:dataTable id="tabelaHistorico" value="#{aluguelController.historico}" var="locacao">
+            <div class="panel panel-info">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Histórico</h3>
+		  </div>
+		  <div class="panel-body">
+                <h:dataTable id="tabelaHistorico" value="#{aluguelController.historico}" var="locacao" class="table table-hover">
                     <h:column>
                         <f:facet name="header">Tipo</f:facet>
                         <h:outputText value="#{locacao.ferramenta.tipo.nome}"/>
@@ -174,7 +204,8 @@
                         <h:outputText value="#{aluguelController.getValorTotal(locacao)}"/>
                     </h:column>
                 </h:dataTable>
-            </fieldset>
+            </div>
+            </div>
 
         </h:form>
     </ui:define>

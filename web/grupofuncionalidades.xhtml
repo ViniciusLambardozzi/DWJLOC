@@ -14,11 +14,16 @@
     <ui:define name="titulo">Funcionalidades por grupo</ui:define>
 
     <ui:define name="content">
-        <h:form>
-            <h:messages/>
-            <h:panelGrid columns="2">
-                <h:outputText value="Grupo" for="grupo"/>
-                <h:selectOneMenu id="grupo" value="#{grupoFuncionalidadesController.idGrupo}">
+    <h:messages class="alert alert-danger"/>
+        <h:form class="form-inline">
+            
+          <div class="panel panel-success">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Grupo</h3>
+		  </div>
+		  <div class="panel-body">
+		 	<div class="form-group">
+                <h:selectOneMenu id="grupo" value="#{grupoFuncionalidadesController.idGrupo}" class="form-control">
                     <f:selectItem itemLabel="Selecione um grupo" noSelectionOption="true"/>
                     <f:selectItems
                             value="#{grupoController.grupos}"
@@ -26,14 +31,20 @@
                             itemLabel="#{grupo.nome}"
                             itemValue="#{grupo.id}"
                     />
-                    <f:ajax event="change" execute="funcionalidade tabelaFuncionalidades" render="funcionalidade tabelaFuncionalidades"/>
+                    <f:ajax event="change" execute="btnRemove btnAdd funcionalidade tabelaFuncionalidades" render="btnRemove btnAdd funcionalidade tabelaFuncionalidades"/>
                 </h:selectOneMenu>
-            </h:panelGrid>
-
-            <fieldset>
-                <legend>Nova</legend>
-                <h:panelGrid columns="2">
-                    <h:selectOneMenu id="funcionalidade" value="#{grupoFuncionalidadesController.idFuncionalidade}">
+              </div>
+            </div>
+            </div>
+            
+            
+           <div class="panel panel-success">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Nova Funcionalidade</h3>
+		  </div>
+		  <div class="panel-body">
+		  		<div class="form-group">
+                    <h:selectOneMenu id="funcionalidade" value="#{grupoFuncionalidadesController.idFuncionalidade}" class="form-control">
                         <f:selectItem itemLabel="Selecione uma funcionalidade" noSelectionOption="true"/>
                         <f:selectItems
                                 value="#{grupoFuncionalidadesController.allFuncionalidades}"
@@ -42,15 +53,20 @@
                                 itemValue="#{funcionalidade.id}"
                         />
                     </h:selectOneMenu>
+                 </div>
 
                     <!--disabled="#{!grupoController.isNotConstant(grupoFuncionalidadesController.idGrupo)}"-->
-                    <h:commandButton  action="#{grupoFuncionalidadesController.adicionarFuncionalidade}" value="Adicionar"/>
-                </h:panelGrid>
-            </fieldset>
+                    <h:commandButton id="btnAdd" disabled="#{!grupoController.isNotConstant(grupoFuncionalidadesController.idGrupo)}" action="#{grupoFuncionalidadesController.adicionarFuncionalidade}" value="Adicionar" class="btn btn-success"/>
+                </div>
+                </div>
 
-            <fieldset>
-                <legend>Funcionalidades</legend>
-                <h:dataTable id="tabelaFuncionalidades" value="#{grupoFuncionalidadesController.grupoFuncionalidades}" var="funcionalidade">
+            <div class="panel panel-info">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Funcionalidades</h3>
+		  </div>
+		  <div class="panel-body">
+
+                <h:dataTable id="tabelaFuncionalidades" value="#{grupoFuncionalidadesController.grupoFuncionalidades}" var="funcionalidade" class="table table-hover">
                     <h:column>
                         <f:facet name="header">Nome</f:facet>
                         <h:outputText value="#{funcionalidade.nome}"/>
@@ -58,10 +74,12 @@
 
                     <h:column>
                         <f:facet name="header">Remover</f:facet>
-                        <h:commandLink disabled="#{!grupoController.isNotConstant(grupoFuncionalidadesController.idGrupo)}" value="Remover" action="#{grupoFuncionalidadesController.remover(funcionalidade)}"/>
+                        <h:commandLink id="btnRemove" disabled="#{!grupoController.isNotConstant(grupoFuncionalidadesController.idGrupo)}" value="Remover" action="#{grupoFuncionalidadesController.remover(funcionalidade)}" class="btn btn-danger"/>
                     </h:column>
                 </h:dataTable>
-            </fieldset>
+            </div>
+            </div>
+            
         </h:form>
     </ui:define>
 </ui:composition>

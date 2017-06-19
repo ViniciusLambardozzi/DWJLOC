@@ -2,8 +2,10 @@ package br.edu.ifsuldeminas.dwjloc.controller;
 
 import java.util.List;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
 
 import br.edu.ifsuldeminas.dwjloc.dao.Dao;
 import br.edu.ifsuldeminas.dwjloc.model.TipoFerramenta;
@@ -39,6 +41,13 @@ public class TipoFerramentaController {
 	}
 
 	public void remover(TipoFerramenta tipoFerramenta) {
-		new Dao<TipoFerramenta>(TipoFerramenta.class).remove(tipoFerramenta);
+		try
+		{
+			new Dao<TipoFerramenta>(TipoFerramenta.class).remove(tipoFerramenta);
+		}catch (Exception e)
+		{
+			FacesContext.getCurrentInstance().addMessage("tipoferramenta", new FacesMessage("Não é possível remover um tipo com ferramentas salvas."));
+
+		}
 	}
 }

@@ -75,7 +75,14 @@ public class UsuarioController
 	
 	public void remover(Usuario usuario)
 	{
-		new Dao<Usuario>(Usuario.class).remove(usuario);
+		try
+		{
+			new Dao<Usuario>(Usuario.class).remove(usuario);
+		}catch (Exception e)
+		{
+            FacesContext.getCurrentInstance().addMessage(usuario instanceof PessoaFisica ? "pessoafisica" : "pessoajuridica", new FacesMessage("Não é possível remover um usuário com locações salvas."));
+
+        }
 	}
 	
 	public List<Usuario> getUsuarios()

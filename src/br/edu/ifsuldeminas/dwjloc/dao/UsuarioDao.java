@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 
+import br.edu.ifsuldeminas.dwjloc.lib.LibConstantes;
 import br.edu.ifsuldeminas.dwjloc.model.Grupo;
 import br.edu.ifsuldeminas.dwjloc.model.Usuario;
 import br.edu.ifsuldeminas.dwjloc.util.JPAUtil;
@@ -43,5 +44,12 @@ public class UsuarioDao
 		query.setParameter("pGrupo", grupo);
 		
 		return query.getResultList();
+	}
+
+	public boolean isAdm(Usuario usuario)
+	{
+		usuario = new Dao<Usuario>(Usuario.class).getById(usuario.getId());
+
+		return usuario.getGrupo().getId() != LibConstantes.Banco.ID_GRUPO_ADMINISTRADORES;
 	}
 }

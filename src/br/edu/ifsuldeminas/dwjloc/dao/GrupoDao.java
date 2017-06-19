@@ -3,8 +3,11 @@ package br.edu.ifsuldeminas.dwjloc.dao;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
+import br.edu.ifsuldeminas.dwjloc.model.Funcionalidade;
 import br.edu.ifsuldeminas.dwjloc.model.Grupo;
 import br.edu.ifsuldeminas.dwjloc.util.JPAUtil;
+
+import java.util.List;
 
 public class GrupoDao {
 	
@@ -25,4 +28,20 @@ public class GrupoDao {
 		return resultado;
 	}
 
+
+	public List<Funcionalidade> getMissingFuncionalidades(Grupo grupo)
+	{
+		List<Funcionalidade> resultado = new Dao<Funcionalidade>(Funcionalidade.class).getAll();
+		grupo = getGrupoFuncionalidades(grupo);
+
+		for(Funcionalidade funcionalidade : grupo.getFuncionalidades())
+		{
+			if(resultado.contains(funcionalidade))
+			{
+				resultado.remove(funcionalidade);
+			}
+		}
+
+		return resultado;
+	}
 }

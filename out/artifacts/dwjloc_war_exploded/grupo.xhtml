@@ -13,23 +13,33 @@
 	<ui:define name="titulo">Grupo</ui:define>
 	  
 	  <ui:define name="content">
+	  <h:messages class="alert alert-danger"/>
+	  <div class="panel panel-default">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Cadastrar</h3>
+		  </div>
+		  <div class="panel-body">
 	  	<h:form>
-	  		<h:messages/>
-	  		<fieldset>
-	  			<legend>Cadastrar</legend>
-	  			<h:panelGrid columns="2">
-	  				
-	  				<h:outputText value="Nome" for="nome"/>
-	  				<h:inputText id="nome" value="#{grupoController.grupo.nome}" required="true" requiredMessage="Nome obrigatório."/>
-	  				
-	  				<h:commandButton value="Gravar" action="#{grupoController.gravar(grupoController.grupo)}"/>
-	  				
-	  			</h:panelGrid>
-	  		</fieldset>
+				
+
+	  			<div class="form-group">
+	  				<label>Nome</label>
+	  				<h:inputText id="nome" value="#{grupoController.grupo.nome}" required="true" requiredMessage="Nome obrigatório." class="form-control"/>
+	  			</div>
+	  			
+	  			<div align="right">
+	  				<h:commandButton value="Gravar" action="#{grupoController.gravar(grupoController.grupo)}" class="btn btn-success"/>
+	  			</div>
+
 	  	</h:form>
+	  	</div>
+	  	</div>
 	  	
+	  	
+	  	<div class="panel panel-default">
+  		<div class="panel-body">
 	  	<h:form id="formTabelaGrupos">
-	  		<h:dataTable id="tabelaGrupos" value="#{grupoController.grupos}" var="grupo">
+	  		<h:dataTable id="tabelaGrupos" value="#{grupoController.grupos}" var="grupo" class="table table-hover">
 				<h:column>
 					<f:facet name="header">Nome</f:facet>
 					<h:outputText value="#{grupo.nome}"/>
@@ -37,16 +47,18 @@
 				
 				<h:column>
 					<f:facet name="header">Atualizar</f:facet>
-					<h:commandLink value="Atualizar" disabled="#{!grupoController.isNotConstant(grupo.id)}" action="#{grupoController.carregar(grupo)}"/>
+					<h:commandLink value="Atualizar" disabled="#{!grupoController.isNotConstant(grupo.id)}" action="#{grupoController.carregar(grupo)}" class="btn btn-warning"/>
 				</h:column>
 				
 				<h:column>
 					<f:facet name="header">Remover</f:facet>
-					<h:commandLink value="Remover" disabled="#{!grupoController.isNotConstant(grupo.id)}" action="#{grupoController.remover(grupo)}"/>
+					<h:commandLink value="Remover" disabled="#{!grupoController.isNotConstant(grupo.id)}" action="#{grupoController.remover(grupo)}" class="btn btn-danger"/>
 				</h:column>
 					  			
 	  		</h:dataTable>
 	  	</h:form>
+	  	</div>
+	  	</div>
 	  	
 	  	</ui:define>
 	  </ui:composition>

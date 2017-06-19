@@ -39,7 +39,7 @@ public class LoginController {
 		{
 			context.getExternalContext().getFlash().setKeepMessages(true);
 			context.addMessage(null, new FacesMessage("Usu�rio ou senha inv�lidos."));
-			return "login?faces-redirect=true";
+			return "/login?faces-redirect=true";
 		}
 	}
 	
@@ -63,5 +63,16 @@ public class LoginController {
 	{
 		FacesContext context = FacesContext.getCurrentInstance();
 		return (Usuario) context.getExternalContext().getSessionMap().get("usuarioLogado");
+	}
+
+	public String getAdmDivVisibility()
+	{
+		if(getUsuario() == null)
+		{
+			return "visible";
+		}
+		boolean adm = new UsuarioDao().isAdm(getUsuarioLogado());
+
+		return adm ? "visible" : "hidden";
 	}
 }
