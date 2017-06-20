@@ -64,4 +64,9 @@ public class EstadoFerramentaController
 	{
 		return id != LibConstantes.Banco.ID_ESTADO_DISPONIVEL && id != LibConstantes.Banco.ID_ESTADO_ALUGADO && id != LibConstantes.Banco.ID_ESTADO_DANIFICADO;
 	}
+
+	public String buttonDisabled(Integer id)
+	{
+		return !isNotConstant(id) ? " disabled" : "";
+	}
 }

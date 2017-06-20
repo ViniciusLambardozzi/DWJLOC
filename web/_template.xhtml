@@ -38,14 +38,21 @@
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> #{loginController.usuarioLogado.nome} <b
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+                            class="fa fa-user"></i> #{loginController.usuarioLogado.nome} <b
                             class="caret"></b></a>
+
                     <ul class="dropdown-menu">
-                        <li>
-                            <h:form>
-                                <h:commandLink action="#{loginController.deslogar}"><i class="fa fa-fw fa-power-off"></i> Log Out</h:commandLink>
-                            </h:form>
-                        </li>
+                        <h:form>
+                            <li>
+
+                                <h:commandLink rendered="#{loginController.renderLogout()}" action="#{loginController.deslogar}"><i class="fa fa-fw fa-power-off"></i> Log Out</h:commandLink>
+                            </li>
+
+                            <li>
+                                <a style="#{loginController.renderLogin()}" href="login.xhtml"><i class="fa fa-fw fa-sign-in"></i> Log In</a>
+                            </li>
+                        </h:form>
                     </ul>
                 </li>
             </ul>

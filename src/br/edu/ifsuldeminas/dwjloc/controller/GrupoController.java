@@ -67,4 +67,8 @@ public class GrupoController
 	{
 		return id == LibConstantes.Banco.ID_GRUPO_ADMINISTRADORES;
 	}
+	public String buttonDisabled(Integer id)
+	{
+		return !isNotConstant(id) ? " disabled" : "";
+	}
 }

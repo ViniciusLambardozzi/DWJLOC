@@ -2,53 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60930a6b-3db8-4c8b-aa15-d450a84927cb" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/WEB-INF/classes/br/edu/ifsuldeminas/dwjloc/controller/FerramentaController.class" afterPath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/WEB-INF/classes/br/edu/ifsuldeminas/dwjloc/controller/FerramentaController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/WEB-INF/classes/br/edu/ifsuldeminas/dwjloc/controller/EstadoFerramentaController.class" afterPath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/WEB-INF/classes/br/edu/ifsuldeminas/dwjloc/controller/EstadoFerramentaController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/WEB-INF/classes/br/edu/ifsuldeminas/dwjloc/controller/GrupoController.class" afterPath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/WEB-INF/classes/br/edu/ifsuldeminas/dwjloc/controller/GrupoController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/WEB-INF/classes/br/edu/ifsuldeminas/dwjloc/controller/GrupoFuncionalidadesController.class" afterPath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/WEB-INF/classes/br/edu/ifsuldeminas/dwjloc/controller/GrupoFuncionalidadesController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/WEB-INF/classes/br/edu/ifsuldeminas/dwjloc/controller/LoginController.class" afterPath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/WEB-INF/classes/br/edu/ifsuldeminas/dwjloc/controller/LoginController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/WEB-INF/classes/br/edu/ifsuldeminas/dwjloc/controller/TipoFerramentaController.class" afterPath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/WEB-INF/classes/br/edu/ifsuldeminas/dwjloc/controller/TipoFerramentaController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/WEB-INF/classes/br/edu/ifsuldeminas/dwjloc/controller/UsuarioController.class" afterPath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/WEB-INF/classes/br/edu/ifsuldeminas/dwjloc/controller/UsuarioController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/WEB-INF/classes/br/edu/ifsuldeminas/dwjloc/dao/GrupoDao.class" afterPath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/WEB-INF/classes/br/edu/ifsuldeminas/dwjloc/dao/GrupoDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/WEB-INF/classes/br/edu/ifsuldeminas/dwjloc/dao/UsuarioDao.class" afterPath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/WEB-INF/classes/br/edu/ifsuldeminas/dwjloc/dao/UsuarioDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/WEB-INF/classes/br/edu/ifsuldeminas/dwjloc/lib/LibConstantes$Banco.class" afterPath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/WEB-INF/classes/br/edu/ifsuldeminas/dwjloc/lib/LibConstantes$Banco.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/dwjloc/br/edu/ifsuldeminas/dwjloc/controller/FerramentaController.class" afterPath="$PROJECT_DIR$/out/production/dwjloc/br/edu/ifsuldeminas/dwjloc/controller/FerramentaController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/dwjloc/br/edu/ifsuldeminas/dwjloc/controller/EstadoFerramentaController.class" afterPath="$PROJECT_DIR$/out/production/dwjloc/br/edu/ifsuldeminas/dwjloc/controller/EstadoFerramentaController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/dwjloc/br/edu/ifsuldeminas/dwjloc/controller/GrupoController.class" afterPath="$PROJECT_DIR$/out/production/dwjloc/br/edu/ifsuldeminas/dwjloc/controller/GrupoController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/dwjloc/br/edu/ifsuldeminas/dwjloc/controller/GrupoFuncionalidadesController.class" afterPath="$PROJECT_DIR$/out/production/dwjloc/br/edu/ifsuldeminas/dwjloc/controller/GrupoFuncionalidadesController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/dwjloc/br/edu/ifsuldeminas/dwjloc/controller/LoginController.class" afterPath="$PROJECT_DIR$/out/production/dwjloc/br/edu/ifsuldeminas/dwjloc/controller/LoginController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/dwjloc/br/edu/ifsuldeminas/dwjloc/controller/TipoFerramentaController.class" afterPath="$PROJECT_DIR$/out/production/dwjloc/br/edu/ifsuldeminas/dwjloc/controller/TipoFerramentaController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/dwjloc/br/edu/ifsuldeminas/dwjloc/controller/UsuarioController.class" afterPath="$PROJECT_DIR$/out/production/dwjloc/br/edu/ifsuldeminas/dwjloc/controller/UsuarioController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/dwjloc/br/edu/ifsuldeminas/dwjloc/dao/GrupoDao.class" afterPath="$PROJECT_DIR$/out/production/dwjloc/br/edu/ifsuldeminas/dwjloc/dao/GrupoDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/dwjloc/br/edu/ifsuldeminas/dwjloc/dao/UsuarioDao.class" afterPath="$PROJECT_DIR$/out/production/dwjloc/br/edu/ifsuldeminas/dwjloc/dao/UsuarioDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/dwjloc/br/edu/ifsuldeminas/dwjloc/lib/LibConstantes$Banco.class" afterPath="$PROJECT_DIR$/out/production/dwjloc/br/edu/ifsuldeminas/dwjloc/lib/LibConstantes$Banco.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/_template.xhtml" afterPath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/_template.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/aluguel.xhtml" afterPath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/aluguel.xhtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/estadoferramenta.xhtml" afterPath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/estadoferramenta.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/ferramenta.xhtml" afterPath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/ferramenta.xhtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/grupo.xhtml" afterPath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/grupo.xhtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/grupofuncionalidades.xhtml" afterPath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/grupofuncionalidades.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/login.xhtml" afterPath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/login.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/pessoafisica.xhtml" afterPath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/pessoafisica.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/pessoajuridica.xhtml" afterPath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/pessoajuridica.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/tipoferramenta.xhtml" afterPath="$PROJECT_DIR$/out/artifacts/dwjloc_war_exploded/tipoferramenta.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/controller/FerramentaController.java" afterPath="$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/controller/FerramentaController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/controller/EstadoFerramentaController.java" afterPath="$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/controller/EstadoFerramentaController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/controller/GrupoController.java" afterPath="$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/controller/GrupoController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/controller/GrupoFuncionalidadesController.java" afterPath="$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/controller/GrupoFuncionalidadesController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/controller/LoginController.java" afterPath="$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/controller/LoginController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/controller/TipoFerramentaController.java" afterPath="$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/controller/TipoFerramentaController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/controller/UsuarioController.java" afterPath="$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/controller/UsuarioController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/dao/GrupoDao.java" afterPath="$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/dao/GrupoDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/dao/UsuarioDao.java" afterPath="$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/dao/UsuarioDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/lib/LibConstantes.java" afterPath="$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/lib/LibConstantes.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/faces-config.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/faces-config.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/_template.xhtml" afterPath="$PROJECT_DIR$/web/_template.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/aluguel.xhtml" afterPath="$PROJECT_DIR$/web/aluguel.xhtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/estadoferramenta.xhtml" afterPath="$PROJECT_DIR$/web/estadoferramenta.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/ferramenta.xhtml" afterPath="$PROJECT_DIR$/web/ferramenta.xhtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/grupo.xhtml" afterPath="$PROJECT_DIR$/web/grupo.xhtml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/grupofuncionalidades.xhtml" afterPath="$PROJECT_DIR$/web/grupofuncionalidades.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/login.xhtml" afterPath="$PROJECT_DIR$/web/login.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pessoafisica.xhtml" afterPath="$PROJECT_DIR$/web/pessoafisica.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/pessoajuridica.xhtml" afterPath="$PROJECT_DIR$/web/pessoajuridica.xhtml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/tipoferramenta.xhtml" afterPath="$PROJECT_DIR$/web/tipoferramenta.xhtml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -73,21 +45,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="_template.xhtml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="_template.xhtml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/_template.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="29">
-              <caret line="43" column="28" lean-forward="false" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="grupofuncionalidades.xhtml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/grupofuncionalidades.xhtml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-400">
-              <caret line="44" column="34" lean-forward="true" selection-start-line="44" selection-start-column="34" selection-end-line="44" selection-end-column="34" />
+            <state relative-caret-position="72">
+              <caret line="44" column="24" lean-forward="false" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -149,27 +111,27 @@
         <option value="$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/dao/DaoFerramenta.java" />
         <option value="$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/model/FerramentaAluguel.java" />
         <option value="$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/dao/DaoFerramentaAluguel.java" />
-        <option value="$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/controller/EstadoFerramentaController.java" />
         <option value="$PROJECT_DIR$/web/tipoferramenta.xhtml" />
         <option value="$PROJECT_DIR$/web/login.xhtml" />
         <option value="$PROJECT_DIR$/web/ferramenta.xhtml" />
         <option value="$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/controller/AluguelController.java" />
         <option value="$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/model/Funcionalidade.java" />
-        <option value="$PROJECT_DIR$/web/grupo.xhtml" />
-        <option value="$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/controller/GrupoController.java" />
-        <option value="$PROJECT_DIR$/web/WEB-INF/faces-config.xml" />
         <option value="$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/lib/LibConstantes.java" />
         <option value="$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/dao/UsuarioDao.java" />
         <option value="$PROJECT_DIR$/web/aluguel.xhtml" />
         <option value="$PROJECT_DIR$/web/pessoajuridica.xhtml" />
         <option value="$PROJECT_DIR$/web/pessoafisica.xhtml" />
-        <option value="$PROJECT_DIR$/web/estadoferramenta.xhtml" />
         <option value="$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/controller/UsuarioController.java" />
         <option value="$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/controller/FerramentaController.java" />
-        <option value="$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/controller/GrupoFuncionalidadesController.java" />
         <option value="$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/dao/GrupoDao.java" />
-        <option value="$PROJECT_DIR$/web/grupofuncionalidades.xhtml" />
         <option value="$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/controller/TipoFerramentaController.java" />
+        <option value="$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/controller/GrupoFuncionalidadesController.java" />
+        <option value="$PROJECT_DIR$/web/grupofuncionalidades.xhtml" />
+        <option value="$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/controller/GrupoController.java" />
+        <option value="$PROJECT_DIR$/web/grupo.xhtml" />
+        <option value="$PROJECT_DIR$/web/estadoferramenta.xhtml" />
+        <option value="$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/controller/EstadoFerramentaController.java" />
+        <option value="$PROJECT_DIR$/web/WEB-INF/faces-config.xml" />
         <option value="$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/controller/LoginController.java" />
         <option value="$PROJECT_DIR$/web/_template.xhtml" />
       </list>
@@ -212,7 +174,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -254,28 +216,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dwjloc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dwjloc" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WEB-INF" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -390,6 +330,10 @@
               <option name="myItemId" value="dwjloc" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -462,7 +406,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1023,7 +967,8 @@
       <workItem from="1497474265310" duration="9030000" />
       <workItem from="1497885127303" duration="2242000" />
       <workItem from="1497888556828" duration="207000" />
-      <workItem from="1497890992646" duration="651000" />
+      <workItem from="1497890992646" duration="3054000" />
+      <workItem from="1497956809985" duration="5204000" />
     </task>
     <task id="LOCAL-00001" summary="Blood, tears and caffeine.&#10;Login screen start.">
       <created>1497404145649</created>
@@ -1036,7 +981,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92780000" />
+    <option name="totallyTimeSpent" value="100387000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1167,20 +1112,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/model/Ferramenta.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="16" column="25" lean-forward="false" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/model/EstadoFerramenta.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/model/Aluguel.java" />
     <entry file="file://$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/dao/SafeTransactionManager.java" />
     <entry file="file://$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/util/JPAUtil.java">
@@ -1261,48 +1192,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/util/Autorizador.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-145">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/model/Grupo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="29">
           <caret line="26" column="38" lean-forward="false" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/lib/LibConstantes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="7" column="64" lean-forward="false" selection-start-line="7" selection-start-column="64" selection-end-line="7" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/faces-config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="9" selection-end-column="20" />
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/grupo.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="44" column="57" lean-forward="true" selection-start-line="44" selection-start-column="57" selection-end-line="44" selection-end-column="57" />
         </state>
       </provider>
     </entry>
@@ -1341,20 +1234,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/controller/EstadoFerramentaController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6">
-          <caret line="54" column="5" lean-forward="false" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/estadoferramenta.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="63" column="90" lean-forward="false" selection-start-line="63" selection-start-column="90" selection-end-line="63" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/dao/Dao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="377">
@@ -1376,13 +1255,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/controller/GrupoController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="65" column="46" lean-forward="true" selection-start-line="65" selection-start-column="46" selection-end-line="65" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/dao/GrupoDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="430">
@@ -1390,27 +1262,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/controller/GrupoFuncionalidadesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="114" column="63" lean-forward="false" selection-start-line="114" selection-start-column="63" selection-end-line="114" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/controller/TipoFerramentaController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
           <caret line="39" column="51" lean-forward="true" selection-start-line="39" selection-start-column="51" selection-end-line="39" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/controller/FerramentaController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1437,26 +1292,138 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/controller/LoginController.java">
+    <entry file="file://$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/controller/GrupoFuncionalidadesController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="45" column="26" lean-forward="false" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/_template.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="43" column="28" lean-forward="false" selection-start-line="43" selection-start-column="28" selection-end-line="43" selection-end-column="28" />
-          <folding />
+        <state relative-caret-position="354">
+          <caret line="140" column="133" lean-forward="false" selection-start-line="140" selection-start-column="133" selection-end-line="140" selection-end-column="133" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/grupofuncionalidades.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-400">
-          <caret line="44" column="34" lean-forward="true" selection-start-line="44" selection-start-column="34" selection-end-line="44" selection-end-column="34" />
+        <state relative-caret-position="441">
+          <caret line="76" column="329" lean-forward="false" selection-start-line="76" selection-start-column="329" selection-end-line="76" selection-end-column="329" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/controller/GrupoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="412">
+          <caret line="71" column="51" lean-forward="false" selection-start-line="71" selection-start-column="51" selection-end-line="71" selection-end-column="51" />
+          <folding>
+            <element signature="e#1734#1735#0" expanded="true" />
+            <element signature="e#1785#1786#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/estadoferramenta.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1267">
+          <caret line="73" column="7" lean-forward="true" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/controller/FerramentaController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/controller/EstadoFerramentaController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="67" column="32" lean-forward="false" selection-start-line="67" selection-start-column="32" selection-end-line="67" selection-end-column="32" />
+          <folding>
+            <element signature="e#2133#2134#0" expanded="true" />
+            <element signature="e#2184#2185#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/lib/LibConstantes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="7" column="64" lean-forward="false" selection-start-line="7" selection-start-column="64" selection-end-line="7" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/model/EstadoFerramenta.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/model/Ferramenta.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-232">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/grupo.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="93">
+          <caret line="54" column="213" lean-forward="false" selection-start-line="54" selection-start-column="213" selection-end-line="54" selection-end-column="213" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/faces-config.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="8" column="83" lean-forward="true" selection-start-line="8" selection-start-column="83" selection-end-line="8" selection-end-column="83" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="7" column="26" lean-forward="false" selection-start-line="7" selection-start-column="26" selection-end-line="7" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/util/Autorizador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-319">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/br/edu/ifsuldeminas/dwjloc/controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="85" column="89" lean-forward="false" selection-start-line="85" selection-start-column="89" selection-end-line="85" selection-end-column="89" />
+          <folding>
+            <element signature="e#2150#2151#0" expanded="true" />
+            <element signature="e#2209#2210#0" expanded="true" />
+            <element signature="e#2242#2243#0" expanded="true" />
+            <element signature="e#2331#2332#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/_template.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="44" column="24" lean-forward="false" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
           <folding />
         </state>
       </provider>

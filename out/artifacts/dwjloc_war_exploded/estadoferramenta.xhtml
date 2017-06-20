@@ -56,12 +56,12 @@
 				
 				<h:column>
 					<f:facet name="header">Atualizar</f:facet>
-					<h:commandLink value="Atualizar" disabled="#{!grupoController.isNotConstant(estado.id)}" action="#{estadoFerramentaController.carregar(estado)}" class="btn btn-warning"/>
+					<h:commandLink value="Atualizar" disabled="#{!grupoController.isNotConstant(estado.id)}" action="#{estadoFerramentaController.carregar(estado)}" class="btn btn-warning#{estadoFerramentaController.buttonDisabled(estado.id)}"/>
 				</h:column>
 				
 				<h:column>
 					<f:facet name="header">Remover</f:facet>
-					<h:commandLink value="Remover" disabled="#{!estadoFerramentaController.isNotConstant(estado.id)}" action="#{estadoFerramentaController.remover(estado)}" class="btn btn-danger"/>
+					<h:commandLink value="Remover" disabled="#{!estadoFerramentaController.isNotConstant(estado.id)}" action="#{estadoFerramentaController.remover(estado)}" class="btn btn-danger#{estadoFerramentaController.buttonDisabled(estado.id)}"/>
 				</h:column>
 					  			
 	  		</h:dataTable>

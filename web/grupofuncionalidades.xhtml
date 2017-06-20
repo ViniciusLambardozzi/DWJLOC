@@ -74,7 +74,7 @@
 
                     <h:column>
                         <f:facet name="header">Remover</f:facet>
-                        <h:commandLink id="btnRemove" disabled="#{!grupoController.isNotConstant(grupoFuncionalidadesController.idGrupo)}" value="Remover" action="#{grupoFuncionalidadesController.remover(funcionalidade)}" class="btn btn-danger"/>
+                        <h:commandLink id="btnRemove" disabled="#{!grupoController.isNotConstant(grupoFuncionalidadesController.idGrupo)}" value="Remover" action="#{grupoFuncionalidadesController.remover(funcionalidade)}" class="btn btn-danger#{grupoFuncionalidadesController.removeDisabled(grupoFuncionalidadesController.idGrupo)}"/>
                     </h:column>
                 </h:dataTable>
             </div>

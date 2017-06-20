@@ -1,6 +1,7 @@
 package br.edu.ifsuldeminas.dwjloc.controller;
 
 import br.edu.ifsuldeminas.dwjloc.dao.Dao;
+import br.edu.ifsuldeminas.dwjloc.lib.LibConstantes;
 import br.edu.ifsuldeminas.dwjloc.model.Funcionalidade;
 import br.edu.ifsuldeminas.dwjloc.model.Grupo;
 import br.edu.ifsuldeminas.dwjloc.util.JPAUtil;
@@ -134,4 +135,11 @@ public class GrupoFuncionalidadesController
     {
         this.idFuncionalidade = idFuncionalidade;
     }
+
+    public String removeDisabled(Integer id)
+    {
+        return (id == LibConstantes.Banco.ID_GRUPO_CLIENTES || id == LibConstantes.Banco.ID_GRUPO_ADMINISTRADORES) ? " disabled" : "";
+
+    }
+
 }

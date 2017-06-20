@@ -75,4 +75,14 @@ public class LoginController {
 
 		return adm ? "visible" : "hidden";
 	}
+
+	public String renderLogout()
+	{
+		return getUsuarioLogado() != null ? "true" : "false";
+	}
+
+	public String renderLogin()
+	{
+		return getUsuarioLogado() == null ? "visibility: visible;" : "visibility: hidden;";
+	}
 }
