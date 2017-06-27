@@ -9,6 +9,7 @@ import javax.faces.context.FacesContext;
 
 import br.edu.ifsuldeminas.dwjloc.dao.Dao;
 import br.edu.ifsuldeminas.dwjloc.dao.DaoFerramenta;
+import br.edu.ifsuldeminas.dwjloc.lib.LibConstantes;
 import br.edu.ifsuldeminas.dwjloc.model.EstadoFerramenta;
 import br.edu.ifsuldeminas.dwjloc.model.Ferramenta;
 import br.edu.ifsuldeminas.dwjloc.model.PessoaFisica;
@@ -93,5 +94,12 @@ public class FerramentaController
 		{
 			FacesContext.getCurrentInstance().addMessage("ferramenta", new FacesMessage("Não é possível remover uma ferramenta com locações salvas."));
 		}
+	}
+
+	public String updateButtonDisabled(Ferramenta ferramenta)
+	{
+		ferramenta = new Dao<Ferramenta>(Ferramenta.class).getById(ferramenta.getId());
+
+		return ferramenta.getEstado().getId() == LibConstantes.Banco.ID_ESTADO_ALUGADO ? " disabled" : "";
 	}
 }

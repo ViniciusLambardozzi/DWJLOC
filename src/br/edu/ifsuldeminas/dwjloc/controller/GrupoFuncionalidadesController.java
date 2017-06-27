@@ -110,10 +110,7 @@ public class GrupoFuncionalidadesController
 
     public List<Funcionalidade> getMissingFuncionalidades(Integer idGrupo)
     {
-        Grupo grupo = new Grupo();
-        grupo.setId(idGrupo);
-
-        return new GrupoDao().getMissingFuncionalidades(grupo);
+        return new GrupoDao().getMissingFuncionalidades(idGrupo);
     }
 
     public Integer getIdGrupo()

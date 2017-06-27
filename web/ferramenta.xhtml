@@ -92,7 +92,7 @@
 				
 				<h:column>
 					<f:facet name="header">Atualizar</f:facet>
-					<h:commandLink value="Atualizar" action="#{ferramentaController.carregar(ferramenta)}" class="btn btn-warning"/>
+					<h:commandLink value="Atualizar" action="#{ferramentaController.carregar(ferramenta)}" class="btn btn-warning#{ferramentaController.updateButtonDisabled(ferramenta)}" />
 				</h:column>
 				
 				<h:column>

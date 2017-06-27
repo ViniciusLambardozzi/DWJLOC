@@ -56,10 +56,11 @@ public class AluguelController
 
             for (Ferramenta ferramenta : ferramentas)
             {
-                System.out.println(ferramenta.getCodigo());
                 FerramentaAluguel locacao = new FerramentaAluguel();
                 locacao.setPago(false);
                 locacao.setEntregue(false);
+                dataLocacao.set(Calendar.HOUR_OF_DAY, 0);
+                dataDevolucao.set(Calendar.HOUR_OF_DAY, 0);
                 locacao.setDataLocacao(dataLocacao);
                 locacao.setPrazoDevolucao(dataDevolucao);
                 locacao.setFerramenta(ferramenta);
@@ -196,14 +197,12 @@ public class AluguelController
 
     public Float getAcrescimo(FerramentaAluguel locacao)
     {
-        Calendar dataFinal;
         if(locacao.getEntregue())
         {
-            dataFinal = locacao.getDataDevolucao();
-        }else
-        {
-            dataFinal = Calendar.getInstance(TimeZone.getTimeZone("America/Sao_Paulo"));
+            return locacao.getAcrescimo();
         }
+
+        Calendar dataFinal = Calendar.getInstance(TimeZone.getTimeZone("America/Sao_Paulo"));
 
         Calendar dataInicial = locacao.getDataLocacao();
         Calendar prazoDevolucao = locacao.getPrazoDevolucao();
@@ -230,14 +229,12 @@ public class AluguelController
 
     public Float getDesconto(FerramentaAluguel locacao)
     {
-        Calendar dataFinal;
         if(locacao.getEntregue())
         {
-            dataFinal = locacao.getDataDevolucao();
-        }else
-        {
-            dataFinal = Calendar.getInstance(TimeZone.getTimeZone("America/Sao_Paulo"));
+           return locacao.getDesconto();
         }
+
+        Calendar dataFinal = Calendar.getInstance(TimeZone.getTimeZone("America/Sao_Paulo"));
 
         Calendar dataInicial = locacao.getDataLocacao();
         Calendar prazoDevolucao = locacao.getPrazoDevolucao();
