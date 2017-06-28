@@ -22,11 +22,7 @@ public class LoginController {
 		FacesContext context = FacesContext.getCurrentInstance();
 		if(usuario != null)
 		{
-;			// sess�o http
 			context.getExternalContext().getSessionMap().put("usuarioLogado", usuario);
-			
-			//usuario.setGrupo(new GrupoDao().getGrupoFuncionalidades(usuario.getGrupo()));
-			System.out.println(usuario);
 			
 			// funcionalidades			
 			for(Funcionalidade f : usuario.getGrupo().getFuncionalidades())
@@ -34,11 +30,11 @@ public class LoginController {
 				context.getExternalContext().getSessionMap().put(f.getPagina(), f);
 			}
 			
-			return "pessoafisica?faces-redirect=true";
+			return "aluguel?faces-redirect=true";
 		}else
 		{
 			context.getExternalContext().getFlash().setKeepMessages(true);
-			context.addMessage(null, new FacesMessage("Usu�rio ou senha inv�lidos."));
+			context.addMessage(null, new FacesMessage("Usuário ou senha inválidos."));
 			return "/login?faces-redirect=true";
 		}
 	}
